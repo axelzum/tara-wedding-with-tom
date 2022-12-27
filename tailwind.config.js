@@ -7,7 +7,19 @@ module.exports = {
         // be as specific as possible with your content configuration.
     ],
     theme: {
-        extend: {}
+        fontFamily: {
+            myriad: ['myriad-pro', 'sans-serif'],
+            henriette: ['henriette', 'sans-serif']
+        },
+        extend: {
+            backgroundImage: {
+                'marble': 'url(\'../public/home/marble-green.jpg\')'
+            },
+            colors: {
+                'tt-green': '#577d6a',
+                'tt-gold': '#cd9e35'
+            }
+        }
     },
     plugins: []
 };
