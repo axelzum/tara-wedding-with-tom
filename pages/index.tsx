@@ -22,12 +22,14 @@ export default function Home(): React.ReactElement {
                     <div className='absolute w-20 lg:w-40 rotate-[90deg] -top-14 right-0'>
                         <Image
                             alt='A painting of a leaf'
+                            placeholder='blur'
                             src={leafArt}
                         />
                     </div>
                     <div className='absolute w-20 lg:w-40 -bottom-4 -left-8 z-10'>
                         <Image
                             alt='A painting of a Peony flower'
+                            placeholder='blur'
                             src={peonyArt}
                         />
                     </div>
@@ -38,6 +40,7 @@ export default function Home(): React.ReactElement {
                                 alt='Picture of Tom and Tara'
                                 className='object-contain'
                                 fill
+                                placeholder='blur'
                                 priority
                                 src={tomTaraPhoto}
                             />
