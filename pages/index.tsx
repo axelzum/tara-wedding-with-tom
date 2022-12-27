@@ -12,7 +12,7 @@ export default function Home(): React.ReactElement {
                 <meta content='Tom and Tara Wedding' name='description'/>
             </Head>
 
-            <header className='w-full h-16 fixed top-0 bg-marble bg-cover'/>
+            <header className='w-full h-16 fixed top-0 bg-marble bg-cover z-10'/>
 
             <div className='absolute top-[4rem] w-10/12 h-[calc(100%-4rem)] flex flex-col items-center justify-center'>
                 <div
@@ -24,7 +24,7 @@ export default function Home(): React.ReactElement {
                             src={leafArt}
                         />
                     </div>
-                    <div className='absolute w-20 lg:w-40 -bottom-4 -left-8 z-10'>
+                    <div className='absolute w-20 lg:w-40 -bottom-4 -left-8 z-[1]'>
                         <Image
                             alt='A painting of a Peony flower'
                             src={peonyArt}
