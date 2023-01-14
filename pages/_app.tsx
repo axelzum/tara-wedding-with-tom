@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import {Analytics} from '@vercel/analytics/react';
 import type {AppProps} from 'next/app';
+import Head from 'next/head';
 import Script from 'next/script';
 
 export default function App({Component, pageProps}: AppProps): React.ReactElement {
