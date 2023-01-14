@@ -19,9 +19,10 @@ export default function App({Component, pageProps}: AppProps): React.ReactElemen
                 id='google-analytics'
                 strategy='afterInteractive'
             />
+            <Analytics/>
+            <meta content='width=device-width, initial-scale=1' name='viewport'/>
             <link href='https://use.typekit.net/tlo2hmw.css' rel='stylesheet'/>
             <Component {...pageProps} />
-            <Analytics/>
         </>
     );
 }
