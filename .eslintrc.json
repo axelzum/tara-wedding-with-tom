@@ -31,7 +31,6 @@
     "no-unreachable-loop": "error",
     "no-use-before-define": "error",
     "arrow-body-style": "error",
-    "complexity": ["error", 2],
     "curly": "error",
     "default-case": "error",
     "default-case-last": "error",
