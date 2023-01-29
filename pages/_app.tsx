@@ -1,7 +1,6 @@
 import '../styles/globals.css';
 import {Analytics} from '@vercel/analytics/react';
 import type {AppProps} from 'next/app';
-import Head from 'next/head';
 import Script from 'next/script';
 
 export default function App({Component, pageProps}: AppProps): React.ReactElement {
@@ -21,7 +20,11 @@ export default function App({Component, pageProps}: AppProps): React.ReactElemen
                 strategy='afterInteractive'
             />
             <Analytics/>
+
+            <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
             <meta content='width=device-width, initial-scale=1' name='viewport'/>
+            <meta content='true' name='HandheldFriendly' />
+
             <link href='https://use.typekit.net/tlo2hmw.css' rel='stylesheet'/>
             <Component {...pageProps} />
         </>
