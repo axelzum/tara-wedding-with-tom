@@ -13,11 +13,14 @@ module.exports = {
         },
         extend: {
             backgroundImage: {
-                'marble': 'url(\'../public/home/marble-green.jpg\')'
+                'marble': 'url(\'../public/index/marble-green.jpg\')'
             },
             colors: {
                 'tt-green': '#577d6a',
                 'tt-gold': '#cd9e35'
+            },
+            transitionProperty: {
+                'height': 'height'
             }
         }
     },
