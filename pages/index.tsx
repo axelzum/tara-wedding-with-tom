@@ -8,7 +8,7 @@ import {useState} from 'react';
 
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 
-export const Home = (): React.ReactElement => {
+export default function Home(): React.ReactElement {
     const [open, setOpen] = useState<boolean>(false);
 
     return (
@@ -107,4 +107,4 @@ export const Home = (): React.ReactElement => {
             </div>
         </div>
     );
-};
+}
