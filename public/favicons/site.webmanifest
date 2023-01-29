@@ -1,0 +1,14 @@
+{
+    "name": "Tom & Tara",
+    "short_name": "Tom & Tara",
+    "icons": [
+        {
+            "src": "/favicons/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#577d6a",
+    "background_color": "#577d6a",
+    "display": "standalone"
+}
