@@ -6,10 +6,10 @@ export const NavigationList = (): React.ReactElement => {
 
     return (
         <Link
-            className={`font-myriad text-lg ${router.pathname === '/' ? 'text-tt-gold' : 'text-white'}`}
+            className={`font-henriette text-lg ${router.pathname === '/' ? 'text-tt-gold' : 'text-white'}`}
             href='/'
         >
-            {'HOME'}
+            {'Home'}
         </Link>
     );
 };
