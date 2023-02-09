@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import type {AppProps} from 'next/app';
 
-import {NavigationLayout} from '../components/navigation-layout';
+import {NavigationLayout} from '../components/navigation/navigation-layout';
 
 import '../styles/globals.css';
 
