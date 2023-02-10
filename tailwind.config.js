@@ -7,6 +7,7 @@ module.exports = {
     theme: {
         fontFamily: {
             myriad: ['myriad-pro', 'sans-serif'],
+            quiche: ['quiche-text', 'sans-serif'],
             fino: ['fino-sans', 'sans-serif'],
             henriette: ['henriette', 'sans-serif']
         },

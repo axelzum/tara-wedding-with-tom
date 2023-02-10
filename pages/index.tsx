@@ -1,7 +1,7 @@
 import Head from 'next/head';
-// import Image from 'next/image';
+import Image from 'next/image';
 
-// import tomTaraPhoto from '../public/images/home/tom-tara-crop-hands.jpg';
+import tomTaraPhoto from '../public/images/home/tom-tara-crop-hands.jpg';
 
 const Home = (): React.ReactElement => (
     <>
@@ -11,15 +11,15 @@ const Home = (): React.ReactElement => (
         </Head>
 
         <div className='flex flex-col h-full items-center'>
+            <Image
+                alt='Picture of Tom and Tara'
+                className='object-contain md:hidden'
+                priority
+                src={tomTaraPhoto}
+            />
             <h1 className='font-fino my-5 lg:my-10 text-4xl md:text-5xl xl:text-6xl'>{'TOM & TARA'}</h1>
             {/* <div className='flex flex-col lg:flex-row items-center border-tt-gold border-2 w-5/6'>*/}
             {/*    <div className='lg:w-7/12 m-5'>*/}
-            {/*        <Image*/}
-            {/*            alt='Picture of Tom and Tara'*/}
-            {/*            className='object-contain'*/}
-            {/*            priority*/}
-            {/*            src={tomTaraPhoto}*/}
-            {/*        />*/}
             {/*    </div>*/}
             {/*    <div className='text-center text-tt-gold lg:w-5/12 m-5'>*/}
             {/*        <p className='text-sm sm:text-lg lg:text-xl'>{'We look forward to you joining us for our wedding'}</p>*/}
