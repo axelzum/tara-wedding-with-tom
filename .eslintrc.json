@@ -50,7 +50,6 @@
     "prefer-const": "error",
     "prefer-spread": "error",
     "require-await": "error",
-    "sort-imports": "error",
     "spaced-comment": "error",
     // Style
     "array-bracket-newline": ["error", "consistent"],
