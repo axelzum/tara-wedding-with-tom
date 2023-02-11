@@ -25,7 +25,7 @@ const Hotels = (): React.ReactElement => (
             <div className='font-quiche text-center w-5/6'>
                 <p>{'A large event is being held in the Marion/Cedar Rapids area the same weekend as our wedding. Unfortunately, because of this we are unable to provide a block of rooms at a specific hotel.'}</p>
                 <p className='font-bold my-4'>{'To ensure everyone has a pleasant stay in Cedar Rapids, we encourage you to reserve your room as soon as possible.'}</p>
-                <p>{'To aid your planning, below is a list of recommended hotels in the area. Because guests will be staying in multiple hotels, shuttle service will not be provided to the venue. The venue has ample parking and cars may be left overnight. Uber and Lyft service is readily available.'}</p>
+                <p>{'To aid your planning, below is a list of recommended hotels in the area. Because guests will be staying in multiple hotels, shuttle service will not be provided. The venue has ample parking and cars may be left overnight.'}</p>
                 <p className='italic font-bold mt-4'>{'*Linked discount rates may not be the best deal available, consider hotel loyalty program rates as well.'}</p>
             </div>
 
@@ -130,8 +130,10 @@ const Hotels = (): React.ReactElement => (
             </div>
 
             <div className='font-quiche text-center w-5/6 pb-6'>
+                <p className='font-fino text-2xl md:text-3xl xl:text-4xl'>{'Additional Places to Stay'}</p>
+                <p>{'There are many other lodging options in the area you may also consider.'}</p>
                 <p>{'Several hotels near 33rd Avenue SW are close to the venue, but this area is less desirable than other recommended hotels.'}</p>
-                <p>{'Coralville/Iowa City is an easy 25-minute drive on I-380 if you would like other options for hotel rates and availability.'}</p>
+                <p>{'The Coralville/Iowa City area also has many hotels and is an easy 25-minute drive on I-380.'}</p>
             </div>
         </div>
     </>
