@@ -20,7 +20,7 @@ const Hotels = (): React.ReactElement => (
         </Head>
 
         <div className='flex flex-col h-full items-center'>
-            <h1 className='font-fino my-6 lg:my-10 text-4xl md:text-5xl xl:text-6xl'>{'Hotel Accommodations'}</h1>
+            <h1 className='font-fino font-bold my-6 lg:my-10 text-4xl md:text-5xl xl:text-6xl'>{'Hotel Accommodations'}</h1>
 
             <div className='font-quiche text-center w-5/6'>
                 <p>{'A large event is being held in the Marion/Cedar Rapids area the same weekend as our wedding. Unfortunately, because of this we are unable to provide a block of rooms at a specific hotel.'}</p>
