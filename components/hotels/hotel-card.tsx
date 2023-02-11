@@ -1,4 +1,5 @@
 import Image, {StaticImageData} from 'next/image';
+import {MapIcon, MapPinIcon, PhoneIcon} from '@heroicons/react/24/outline';
 
 type hotelCardProps = {
     hotelName: string;
@@ -9,18 +10,32 @@ type hotelCardProps = {
 };
 
 export const HotelCard = (props: hotelCardProps): React.ReactElement => (
-    <div className='font-quiche w-50 p-4 rounded-md shadow-lg'>
-        <h2 className='font-bold text-center text-xl'>{props.hotelName}</h2>
+    <div className='flex flex-col font-quiche rounded shadow-lg w-full max-w-md'>
         <Image
             alt={props.hotelName}
-            className='h-40 w-fit m-auto object-contain'
+            className='rounded-t h-44 md:h-60 w-full object-cover'
             priority
             src={props.hotelPhoto}
         />
-        <div className='font-quiche'>
-            <p>{props.hotelAddress}</p>
-            <p>{props.hotelPhone}</p>
-            <p>{`Distance to venue: ${props.hotelDistanceToVenue}`}</p>
+        <div className='p-3'>
+            <div className='items-center mb-1 text-lg font-bold text-tt-green'>
+                {props.hotelName}
+            </div>
+
+            <div className='flex flex-col gap-1 text-sm'>
+                <div className='flex'>
+                    <MapPinIcon className='h-5 mr-1 text-tt-green'/>
+                    <p>{props.hotelAddress}</p>
+                </div>
+                <div className='flex'>
+                    <PhoneIcon className='h-5 mr-1 text-tt-green'/>
+                    <p>{props.hotelPhone}</p>
+                </div>
+                <div className='flex'>
+                    <MapIcon className='h-5 mr-1 text-tt-green'/>
+                    <p>{`Distance to venue: ${props.hotelDistanceToVenue}`}</p>
+                </div>
+            </div>
         </div>
     </div>
 );
