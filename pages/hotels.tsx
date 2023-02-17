@@ -19,7 +19,7 @@ const Hotels = (): React.ReactElement => (
             <meta content='Travel and accommodation for the wedding' name='description'/>
         </Head>
 
-        <div className='flex flex-col h-full items-center'>
+        <div className='flex flex-col text-center h-full items-center'>
             <h1 className='font-fino font-bold my-6 lg:my-10 text-4xl md:text-5xl xl:text-6xl'>{'Hotel Accommodations'}</h1>
 
             <div className='font-quiche text-center w-5/6'>
