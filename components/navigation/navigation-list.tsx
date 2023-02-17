@@ -24,6 +24,15 @@ export const NavigationList = ({linkClicked}: {linkClicked(): void}): React.Reac
                     {'Hotels'}
                 </Link>
             </li>
+            <li className='py-1 px-2 rounded-md'>
+                <Link
+                    className={`block hover:text-tt-gold ${router.pathname === '/faq' ? 'text-tt-gold' : 'text-white'}`}
+                    href='/faq'
+                    onClick={linkClicked}
+                >
+                    {'FAQ'}
+                </Link>
+            </li>
         </ul>
     );
 };

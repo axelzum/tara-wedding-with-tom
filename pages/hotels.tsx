@@ -130,7 +130,7 @@ const Hotels = (): React.ReactElement => (
             </div>
 
             <div className='font-quiche text-center w-5/6 pb-6'>
-                <p className='font-fino text-2xl md:text-3xl xl:text-4xl'>{'Additional Places to Stay'}</p>
+                <p className='font-fino text-3xl xl:text-4xl'>{'Additional Places to Stay'}</p>
                 <p>{'There are many other lodging options in the area you may also consider.'}</p>
                 <p>{'Several hotels near 33rd Avenue SW are close to the venue, but this area is less desirable than other recommended hotels.'}</p>
                 <p>{'The Coralville/Iowa City area also has many hotels and is an easy 25-minute drive on I-380.'}</p>
