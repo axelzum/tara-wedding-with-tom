@@ -105,32 +105,39 @@ const Explore = (): React.ReactElement => (
             />
             <p className='font-fino text-center mt-6 text-3xl xl:text-4xl'>{'Get A Drink'}</p>
             <p className='font-quiche text-center font-bold text-lg'>{'Tom and Tara\'s Favorite Bars and Pubs'}</p>
-            <div className='font-quiche text-center w-5/6'>
+            <div className='font-quiche w-5/6'>
                 <ExploreItem
+                    description='Tara’s favorite pub to get a drink after work. 2 for 1 happy hour!'
                     link='https://brickspubcr.com'
                     title="Brick's Pub – Downtown CR"
                 />
                 <ExploreItem
+                    description='Nice brewery that shares a building with Black Sheep Social Club.'
                     link='https://www.clockhousebrewing.com'
                     title='Clock House Brewing – Downtown CR'
                 />
                 <ExploreItem
+                    description='Popular brewery in downtown Cedar Rapids.'
                     link='https://iowabrewing.beer'
                     title='Iowa Brewing Company – Downtown CR'
                 />
                 <ExploreItem
+                    description='Great brewery in Czech Village. Have a drink on their patio after checking out all the shopping or after exploring the nearby trails.'
                     link='https://www.lionbridgebrewing.com'
                     title='Lion Bridge Brewing Co. – Czech Village'
                 />
                 <ExploreItem
+                    description='Probably our very favorite restaurant in Cedar Rapids! Great food, great cocktails, and a great patio!'
                     link='https://www.lpstreetfood.com'
                     title='LP Street Food (Local Pour) – CR'
                 />
                 <ExploreItem
+                    description='Award winning winery and distillery very close to Cedar Rapids. A wonderful tasting room and outdoor patio. Live music on Friday nights!'
                     link='https://crwine.com'
                     title='Cedar Ridge Winery & Distillery – Swisher'
                 />
                 <ExploreItem
+                    description='Tom and Tara’s favorite pub in Marion. Great atmosphere and a nice patio in the alley out back. Often there is live music in the summer!'
                     link='https://uptownsnug.com'
                     title='Uptown Snug – Marion'
                 />
@@ -145,17 +152,19 @@ const Explore = (): React.ReactElement => (
             />
             <p className='font-fino text-center mt-6 text-3xl xl:text-4xl'>{'Grab A Bite'}</p>
             <p className='font-quiche text-center font-bold text-lg'>{'Tom and Tara\'s Favorite Restaurants'}</p>
-            <div className='font-quiche text-center w-5/6'>
+            <div className='font-quiche w-5/6'>
                 <ExploreItem
                     description='Our Favorite Downtown Coffee Shop (and great breakfast sandwiches!)'
                     link='https://www.dashcoffeeroasters.com/'
                     title='Dash Coffee Roasters – CR and Marion'
                 />
                 <ExploreItem
+                    description='Probably our very favorite restaurant in Cedar Rapids! Great food, great cocktails, and a great patio!'
                     link='https://www.lpstreetfood.com'
                     title='LP Street Food (Local Pour) – CR'
                 />
                 <ExploreItem
+                    description='A fun restaurant with amazing atmosphere in downtown.'
                     link='https://www.iamtheblacksheep.com/'
                     title='Black Sheep Social Club – Downtown CR'
                 />
@@ -164,42 +173,46 @@ const Explore = (): React.ReactElement => (
                     title='Crosby’s – New Bohemia'
                 />
                 <ExploreItem
+                    description='Tom would go here when he was missing Chicago Dogs after he moved to CR, was just a couple blocks from Tom and Tara’s first apartment together!'
                     link='https://theflyingwienie.com'
                     title='The Flying Wienie – CR'
                 />
                 <ExploreItem
+                    description='Tara’s favorite pub to get a drink after work. 2 for 1 happy hour!'
                     link='https://brickspubcr.com'
                     title='Bricks Pub – Downtown CR'
                 />
                 <ExploreItem
+                    description='Our favorite downtown pizza spot!'
                     link='https://www.needcr.com/'
                     title='Need Pizza – Downtown CR'
                 />
                 <ExploreItem
+                    description='Fantastic burgers in a teeny tiny little building!'
                     link='https://www.maproomcr.com/'
                     title='The Map Room – Downtown CR'
                 />
                 <ExploreItem
+                    description='Owned by the same owner’s as our favorite place, LP, Hip-Stir has a similar vibe and menu, just in Marion instead of downtown!'
                     link='https://www.facebook.com/thehipstir'
                     title='The Hip-Stir – Marion'
                 />
                 <ExploreItem
+                    description='A great mix of all types of Asian cuisines, they do everything well. Tom loves to come here for Hot Pot.'
                     link='https://www.mixsushikitchen.com/'
                     title='MIX Sushi & Kitchen – Marion'
-                />
-                <ExploreItem
-                    link='http://marion.shortsburger.com/'
-                    title='Short’s Burger & Shine – Marion'
                 />
                 <ExploreItem
                     link='https://www.goldfinchtap.com'
                     title='GoldFinch Tap & Eatery – Marion'
                 />
                 <ExploreItem
+                    description='Great breakfast and lunch diner in Marion.'
                     link='https://www.facebook.com/WestEndMarion/'
                     title='West End Diner – Marion'
                 />
                 <ExploreItem
+                    description='Probably the most famous pizza spot in Marion, Iowa. Great pizza and don’t forget to get a Zookie! '
                     link='https://zoeyspizza.com'
                     title='Zoey’s Pizzeria – Marion'
                 />

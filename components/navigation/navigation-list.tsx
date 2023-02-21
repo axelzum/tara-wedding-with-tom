@@ -30,7 +30,7 @@ export const NavigationList = ({linkClicked}: {linkClicked(): void}): React.Reac
                     href='/explore'
                     onClick={linkClicked}
                 >
-                    {'Cedar Rapids'}
+                    {'Explore CR'}
                 </Link>
             </li>
             <li className='py-1 px-2 rounded-md'>
