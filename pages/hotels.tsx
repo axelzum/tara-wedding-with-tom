@@ -26,7 +26,7 @@ const Hotels = (): React.ReactElement => (
                 <p>{'A large event is being held in the Marion/Cedar Rapids area the same weekend as our wedding. Unfortunately, because of this we are unable to provide a block of rooms at a specific hotel.'}</p>
                 <p className='font-bold my-4'>{'To ensure everyone has a pleasant stay in Cedar Rapids, we encourage you to reserve your room as soon as possible.'}</p>
                 <p>{'To aid your planning, below is a list of recommended hotels in the area. Because guests will be staying in multiple hotels, shuttle service will not be provided. The venue has ample parking and cars may be left overnight.'}</p>
-                <p className='italic font-bold mt-4'>{'*Linked discount rates may not be the best deal available, consider hotel loyalty program rates as well.'}</p>
+                <p className='italic font-bold mt-4'>{'*Linked discounts may not be the best rates available. You may also want to consider hotel loyalty programs and non-refundable rates.'}</p>
             </div>
 
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mx-4 my-6'>
@@ -64,6 +64,17 @@ const Hotels = (): React.ReactElement => (
                     hotelWebsite='https://www.ihg.com/staybridge/hotels/us/en/cedar-rapids/cidst/hoteldetail?fromRedirect=true&qSrt=sBR&qDest=Cedar%20Rapids,%20IA,%20United%20States&qSlH=cidst&qRms=1&qAdlt=2&qChld=0&qCiD=24&qCiMy=052023&qCoD=25&qCoMy=052023&qAAR=6CBARC&qRtP=6CBARC&setPMCookies=true&qSHBrC=SB&qpMn=0&srb_u=1'
                 />
                 <HotelCard
+                    directionsLink='https://goo.gl/maps/xSKNaoVWbGmTK3pr9'
+                    discountRate='https://www.hilton.com/en/book/reservation/deeplink/?ctyhocn=CIDRURU&groupCode=ZLW&arrivaldate=2023-06-23&departuredate=2023-06-25&cid=OM,WW,HILTONLINK,EN,DirectLink&fromId=HILTONLINKDIRECT'
+                    googleMapsLink='https://goo.gl/maps/sTrupA6xbheFthNv9'
+                    hotelAddress='3900 Westdale Parkway SW Cedar Rapids, IA 52404'
+                    hotelDistanceToVenue='4 miles, 10 minutes'
+                    hotelName='Tru by Hilton'
+                    hotelPhone='319-238-7300'
+                    hotelPhoto={truHotel}
+                    hotelWebsite='https://www.hilton.com/en/hotels/cidruru-tru-cedar-rapids-westdale/?SEO_id=GMB-AMER-RU-CIDRURU&y_source=1_ODg5Mzg5My03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D'
+                />
+                <HotelCard
                     directionsLink='https://goo.gl/maps/1Z9o6fKQtJqMGhaM7'
                     discountRate='https://www.hilton.com/en/book/reservation/deeplink/?ctyhocn=CIDPPHX&corporateCode=0002735364'
                     extraInstructions='2-Night Minimum Stay'
@@ -96,16 +107,6 @@ const Hotels = (): React.ReactElement => (
                     hotelPhone='319-378-7404'
                     hotelPhoto={hiltonGardenInn}
                     hotelWebsite='https://www.hilton.com/en/hotels/cidcrgi-hilton-garden-inn-cedar-rapids/?SEO_id=GMB-AMER-GI-CIDCRGI&y_source=1_MjA0MTUxNDEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D'
-                />
-                <HotelCard
-                    directionsLink='https://goo.gl/maps/xSKNaoVWbGmTK3pr9'
-                    googleMapsLink='https://goo.gl/maps/sTrupA6xbheFthNv9'
-                    hotelAddress='3900 Westdale Parkway SW Cedar Rapids, IA 52404'
-                    hotelDistanceToVenue='4 miles, 10 minutes'
-                    hotelName='Tru by Hilton'
-                    hotelPhone='319-238-7300'
-                    hotelPhoto={truHotel}
-                    hotelWebsite='https://www.hilton.com/en/hotels/cidruru-tru-cedar-rapids-westdale/?SEO_id=GMB-AMER-RU-CIDRURU&y_source=1_ODg5Mzg5My03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D'
                 />
                 <HotelCard
                     directionsLink='https://goo.gl/maps/NuGaZZmhJLZayXDR7'

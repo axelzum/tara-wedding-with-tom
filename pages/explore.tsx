@@ -154,7 +154,7 @@ const Explore = (): React.ReactElement => (
             <p className='font-quiche text-center font-bold text-lg'>{'Tom and Tara\'s Favorite Restaurants'}</p>
             <div className='font-quiche w-5/6'>
                 <ExploreItem
-                    description='Our Favorite Downtown Coffee Shop (and great breakfast sandwiches!)'
+                    description='Our favorite downtown coffee shop (and great breakfast sandwiches!)'
                     link='https://www.dashcoffeeroasters.com/'
                     title='Dash Coffee Roasters – CR and Marion'
                 />
@@ -169,6 +169,7 @@ const Explore = (): React.ReactElement => (
                     title='Black Sheep Social Club – Downtown CR'
                 />
                 <ExploreItem
+                    description='A variety of food from all backgrounds and all styles.'
                     link='https://www.crosbysiowa.com/'
                     title='Crosby’s – New Bohemia'
                 />
@@ -193,7 +194,7 @@ const Explore = (): React.ReactElement => (
                     title='The Map Room – Downtown CR'
                 />
                 <ExploreItem
-                    description='Owned by the same owner’s as our favorite place, LP, Hip-Stir has a similar vibe and menu, just in Marion instead of downtown!'
+                    description='Owned by the same owner’s as our favorite restaurant, LP Street Food. Hip-Stir has a similar vibe and menu, just in uptown Marion instead of downtown CR!'
                     link='https://www.facebook.com/thehipstir'
                     title='The Hip-Stir – Marion'
                 />
@@ -203,6 +204,7 @@ const Explore = (): React.ReactElement => (
                     title='MIX Sushi & Kitchen – Marion'
                 />
                 <ExploreItem
+                    description='Casual fare featuring burgers, chicken sandwiches and dinners. Brunch served from 9–2 on Saturday and Sunday.'
                     link='https://www.goldfinchtap.com'
                     title='GoldFinch Tap & Eatery – Marion'
                 />
@@ -212,7 +214,7 @@ const Explore = (): React.ReactElement => (
                     title='West End Diner – Marion'
                 />
                 <ExploreItem
-                    description='Probably the most famous pizza spot in Marion, Iowa. Great pizza and don’t forget to get a Zookie! '
+                    description='Probably the most famous pizza spot in Marion, Iowa. Great pizza and don’t forget to save room for a Zookie for dessert!'
                     link='https://zoeyspizza.com'
                     title='Zoey’s Pizzeria – Marion'
                 />
@@ -236,14 +238,13 @@ const Explore = (): React.ReactElement => (
                     title='No that’s not a giant toilet brush.'
                 />
                 <ExploreItem
-                    description='On August 10, 2020, a big wind called a derecho came through Cedar Rapids and Marion, destroying 70% of the tree canopy. It had hurricane force winds up to 140 mph.'
+                    description='On August 10, 2020, a big wind called a derecho blew through Cedar Rapids and Marion, destroying 70% of the tree canopy. It had hurricane force winds up to 140 mph.'
                     title='Where are all the trees?'
                 />
-                <div className='font-quiche my-6'>
-                    <h2 className='text-lg font-bold'>{'Hell Or High Water'}</h2>
-                    <p>{'The city is continuing to recover from a massive flood that devastated much of the city on Friday June 13th, 2008. You still see construction along the river as the City continues to rebuild and install flood prevention walls and berms.'}</p>
-                    <p className='mt-3'>{'The high-water mark is located at Mercy Hospital, on the corner of 8th Ave and 10th street. Normally you can\'t even see the river from here, but at this time the river was about waist deep.'}</p>
-                </div>
+                <ExploreItem
+                    description='Cedar Rapids is continuing to recover from a massive flood that devastated much of the city in 2008. You still see construction along the river as the city continues to rebuild and install flood prevention walls and berms.'
+                    title='Hell or High Water'
+                />
             </div>
         </div>
     </>
