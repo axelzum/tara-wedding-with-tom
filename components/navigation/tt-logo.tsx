@@ -1,6 +1,6 @@
 export const TtLogo = (): React.ReactElement => (
     <svg
-        className='transition duration-200 ease-in-out fill-white hover:fill-tt-gold'
+        className='fill-white transition duration-200 ease-in-out hover:fill-tt-gold'
         id='Layer_1'
         version='1.1'
         viewBox='58.8 117.98 242.98 268.91'

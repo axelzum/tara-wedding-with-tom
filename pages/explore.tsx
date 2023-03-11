@@ -18,18 +18,18 @@ const Explore = (): React.ReactElement => (
             <meta content='Info and recommendations for your visit to Cedar Rapids' name='description'/>
         </Head>
 
-        <div className='flex flex-col h-full items-center pb-6'>
-            <h1 className='font-fino font-bold my-6 lg:my-10 text-4xl md:text-5xl xl:text-6xl'>{'Explore Cedar Rapids'}</h1>
+        <div className='flex h-full flex-col items-center pb-6'>
+            <h1 className='my-6 text-4xl font-bold font-fino md:text-5xl lg:my-10 xl:text-6xl'>{'Explore Cedar Rapids'}</h1>
 
             {/* Things To Do */}
             <Image
                 alt='Things To Do'
-                className='rounded-t lg:w-5/6 w-full object-cover'
+                className='w-full rounded-t object-cover lg:w-5/6'
                 priority
                 src={doImage}
             />
-            <p className='font-fino text-center mt-6 text-3xl xl:text-4xl'>{'Things To Do'}</p>
-            <div className='font-quiche w-5/6'>
+            <p className='mt-6 text-center text-3xl font-fino xl:text-4xl'>{'Things To Do'}</p>
+            <div className='w-5/6 font-quiche'>
                 <ExploreItem
                     description='This museum houses more than 7,200 works of art spanning many eras-from Roman antiquity to the present. It features a large collection of art by Grant Wood and Marvin Cone'
                     link='https://www.crma.org/'
@@ -60,12 +60,12 @@ const Explore = (): React.ReactElement => (
                     linkTitle='Visitor Info'
                     title='Mount Trashmore'
                 />
-                <div className='font-quiche my-6'>
+                <div className='my-6 font-quiche'>
                     <h2 className='text-lg font-bold'>{'New Bohemia District'}</h2>
                     <p>There are many restaurants and shops in this area including the <a
-                        className='text-tt-green font-bold hover:text-tt-gold' href='https://www.newbocitymarket.org/'
+                        className='font-bold text-tt-green hover:text-tt-gold' href='https://www.newbocitymarket.org/'
                         rel='noopener noreferrer' target='_blank'>NewBo City Market</a>. Check out nearby <a
-                        className='text-tt-green font-bold hover:text-tt-gold'
+                        className='font-bold text-tt-green hover:text-tt-gold'
                         href='https://www.raygunsite.com/collections/cedar-rapids' rel='noopener noreferrer'
                         target='_blank'>RAYGUN</a> store for fun t-shirts and gifts that have a Cedar Rapids or
                         Midwestern theme.</p>
@@ -99,13 +99,13 @@ const Explore = (): React.ReactElement => (
             {/* Get A Drink */}
             <Image
                 alt='Get A Drink'
-                className='rounded-t lg:w-5/6 w-full object-cover'
+                className='w-full rounded-t object-cover lg:w-5/6'
                 priority
                 src={drinkImage}
             />
-            <p className='font-fino text-center mt-6 text-3xl xl:text-4xl'>{'Get A Drink'}</p>
-            <p className='font-quiche text-center font-bold text-lg'>{'Tom and Tara\'s Favorite Bars and Pubs'}</p>
-            <div className='font-quiche w-5/6'>
+            <p className='mt-6 text-center text-3xl font-fino xl:text-4xl'>{'Get A Drink'}</p>
+            <p className='text-center text-lg font-bold font-quiche'>{'Tom and Tara\'s Favorite Bars and Pubs'}</p>
+            <div className='w-5/6 font-quiche'>
                 <ExploreItem
                     description='Tara’s favorite pub to get a drink after work. 2 for 1 happy hour!'
                     link='https://brickspubcr.com'
@@ -146,13 +146,13 @@ const Explore = (): React.ReactElement => (
             {/* Grab A Bite */}
             <Image
                 alt='Grab A Bite'
-                className='rounded-t lg:w-5/6 w-full object-cover'
+                className='w-full rounded-t object-cover lg:w-5/6'
                 priority
                 src={eatImage}
             />
-            <p className='font-fino text-center mt-6 text-3xl xl:text-4xl'>{'Grab A Bite'}</p>
-            <p className='font-quiche text-center font-bold text-lg'>{'Tom and Tara\'s Favorite Restaurants'}</p>
-            <div className='font-quiche w-5/6'>
+            <p className='mt-6 text-center text-3xl font-fino xl:text-4xl'>{'Grab A Bite'}</p>
+            <p className='text-center text-lg font-bold font-quiche'>{'Tom and Tara\'s Favorite Restaurants'}</p>
+            <div className='w-5/6 font-quiche'>
                 <ExploreItem
                     description='Our favorite downtown coffee shop (and great breakfast sandwiches!)'
                     link='https://www.dashcoffeeroasters.com/'
@@ -223,12 +223,12 @@ const Explore = (): React.ReactElement => (
             {/* About Cedar Rapids */}
             <Image
                 alt='About Cedar Rapids'
-                className='rounded-t lg:w-5/6 w-full object-cover'
+                className='w-full rounded-t object-cover lg:w-5/6'
                 priority
                 src={crImage}
             />
-            <p className='font-fino text-center mt-6 text-3xl xl:text-4xl'>{'About Cedar Rapids'}</p>
-            <div className='font-quiche w-5/6'>
+            <p className='mt-6 text-center text-3xl font-fino xl:text-4xl'>{'About Cedar Rapids'}</p>
+            <div className='w-5/6 font-quiche'>
                 <ExploreItem
                     description='Cedar Rapids is home to many grain processing plants. If you are lucky, Quaker will be making Cap’n Crunch with Crunch Berries while you are visiting.'
                     title='What’s that smell?'

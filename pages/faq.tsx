@@ -8,8 +8,8 @@ const Faq = (): React.ReactElement => (
             <meta content='Frequently Asked Questions About The Wedding' name='description'/>
         </Head>
 
-        <div className='flex flex-col h-full items-center pb-6'>
-            <h1 className='font-fino font-bold text-center my-6 lg:my-10 text-4xl md:text-5xl xl:text-6xl'>{'Frequently Asked Questions'}</h1>
+        <div className='flex h-full flex-col items-center pb-6'>
+            <h1 className='my-6 text-center text-4xl font-bold font-fino md:text-5xl lg:my-10 xl:text-6xl'>{'Frequently Asked Questions'}</h1>
 
             <div className='w-5/6'>
                 <QuestionAnswer
