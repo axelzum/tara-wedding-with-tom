@@ -13,14 +13,14 @@ export const NavigationLayout = ({children}: {children: React.ReactElement}): Re
 
     return (
         <Div100vh>
-            <div className='h-full flex flex-col md:flex-row'>
+            <div className='flex h-full flex-col md:flex-row'>
                 {/* Top Nav */}
                 <nav className='relative inline-block md:hidden'>
-                    <div className='flex flex-col items-center h-20 w-full bg-marble bg-cover'>
+                    <div className='flex h-20 w-full flex-col items-center bg-cover bg-marble'>
                         {/* Hamburger Button*/}
                         <div className='fixed top-5 right-5 mx-auto'>
                             <button
-                                className='group flex justify-center items-center w-10 h-10'
+                                className='flex h-10 w-10 items-center justify-center group'
                                 onClick={(): void => setOpen(!open)}
                             >
                                 <span
@@ -35,7 +35,7 @@ export const NavigationLayout = ({children}: {children: React.ReactElement}): Re
                             </button>
                         </div>
 
-                        <div className='flex items-center justify-center w-20 h-20 transition'>
+                        <div className='flex h-20 w-20 items-center justify-center transition'>
                             <Link className='w-14' href='/' onClick={closeDropdown}>
                                 <TtLogo/>
                             </Link>
@@ -50,13 +50,13 @@ export const NavigationLayout = ({children}: {children: React.ReactElement}): Re
 
                 {/* Side Nav */}
                 <nav
-                    className='flex flex-col items-center h-full bg-marble bg-cover hidden md:flex w-1/3 lg:w-1/4 xl:w-1/5'
+                    className='flex hidden h-full w-1/3 flex-col items-center bg-cover bg-marble md:flex lg:w-1/4 xl:w-1/5'
                 >
                     <Link className='mt-20 w-2/5' href='/'>
                         <TtLogo/>
                     </Link>
 
-                    <hr className='my-5 w-5/6 h-0.5 bg-white'/>
+                    <hr className='my-5 w-5/6 bg-white h-0.5'/>
 
                     <div className='w-5/6'>
                         <NavigationList linkClicked={closeDropdown}/>

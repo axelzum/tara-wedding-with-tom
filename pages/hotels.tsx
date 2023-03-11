@@ -19,17 +19,17 @@ const Hotels = (): React.ReactElement => (
             <meta content='Travel and accommodation for the wedding' name='description'/>
         </Head>
 
-        <div className='flex flex-col text-center h-full items-center'>
-            <h1 className='font-fino font-bold my-6 lg:my-10 text-4xl md:text-5xl xl:text-6xl'>{'Hotel Accommodations'}</h1>
+        <div className='flex h-full flex-col items-center text-center'>
+            <h1 className='my-6 text-4xl font-bold font-fino md:text-5xl lg:my-10 xl:text-6xl'>{'Hotel Accommodations'}</h1>
 
-            <div className='font-quiche text-center w-5/6'>
+            <div className='w-5/6 text-center font-quiche'>
                 <p>{'A large event is being held in the Marion/Cedar Rapids area the same weekend as our wedding. Unfortunately, because of this we are unable to provide a block of rooms at a specific hotel.'}</p>
-                <p className='font-bold my-4'>{'To ensure everyone has a pleasant stay in Cedar Rapids, we encourage you to reserve your room as soon as possible.'}</p>
+                <p className='my-4 font-bold'>{'To ensure everyone has a pleasant stay in Cedar Rapids, we encourage you to reserve your room as soon as possible.'}</p>
                 <p>{'To aid your planning, below is a list of recommended hotels in the area. Because guests will be staying in multiple hotels, shuttle service will not be provided. The venue has ample parking and cars may be left overnight.'}</p>
-                <p className='italic font-bold mt-4'>{'*Linked discounts may not be the best rates available. You may also want to consider hotel loyalty programs and non-refundable rates.'}</p>
+                <p className='mt-4 font-bold italic'>{'*Linked discounts may not be the best rates available. You may also want to consider hotel loyalty programs and non-refundable rates.'}</p>
             </div>
 
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mx-4 my-6'>
+            <div className='mx-4 my-6 grid grid-cols-1 gap-4 lg:grid-cols-2'>
                 <HotelCard
                     directionsLink='https://goo.gl/maps/4iR19ioe7evbX2ZC8'
                     discountRate='https://www.marriott.com/events/start.mi?id=1675811163619&key=GRP'
@@ -130,8 +130,8 @@ const Hotels = (): React.ReactElement => (
                 />
             </div>
 
-            <div className='font-quiche text-center w-5/6 pb-6'>
-                <p className='font-fino text-3xl xl:text-4xl'>{'Additional Places to Stay'}</p>
+            <div className='w-5/6 pb-6 text-center font-quiche'>
+                <p className='text-3xl font-fino xl:text-4xl'>{'Additional Places to Stay'}</p>
                 <p>{'There are many other lodging options in the area you may also consider.'}</p>
                 <p>{'Several hotels near 33rd Avenue SW are close to the venue, but this area is less desirable than other recommended hotels.'}</p>
                 <p>{'The Coralville/Iowa City area also has many hotels and is an easy 25-minute drive on I-380.'}</p>
