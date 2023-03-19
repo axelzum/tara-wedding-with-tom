@@ -8,10 +8,10 @@ type ExploreItemProps = {
 };
 
 export const ExploreItem = (props: ExploreItemProps): React.ReactElement => (
-    <div className='font-quiche my-6'>
+    <div className='my-6 font-quiche'>
         {props.link && !props.linkTitle ?
             <a
-                className='text-tt-green text-lg font-bold hover:text-tt-gold'
+                className='text-lg font-bold text-tt-green hover:text-tt-gold'
                 href={props.link}
                 rel='noopener noreferrer'
                 target='_blank'
@@ -22,7 +22,7 @@ export const ExploreItem = (props: ExploreItemProps): React.ReactElement => (
         {props.description && <p>{props.description}</p>}
         {props.link && props.linkTitle &&
             <a
-                className='text-tt-green font-bold hover:text-tt-gold'
+                className='font-bold text-tt-green hover:text-tt-gold'
                 href={props.link}
                 rel='noopener noreferrer'
                 target='_blank'

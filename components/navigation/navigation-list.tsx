@@ -5,8 +5,8 @@ export const NavigationList = ({linkClicked}: {linkClicked(): void}): React.Reac
     const router = useRouter();
 
     return (
-        <ul className='flex flex-col p-4 md:p-0 font-fino text-center text-2xl'>
-            <li className='py-1 px-2 rounded-md'>
+        <ul className='flex flex-col p-4 text-center text-2xl font-fino md:p-0'>
+            <li className='rounded-md px-2 py-1'>
                 <Link
                     className={`block hover:text-tt-gold ${router.pathname === '/' ? 'text-tt-gold' : 'text-white'}`}
                     href='/'
@@ -15,7 +15,7 @@ export const NavigationList = ({linkClicked}: {linkClicked(): void}): React.Reac
                     {'Home'}
                 </Link>
             </li>
-            <li className='py-1 px-2 rounded-md'>
+            <li className='rounded-md px-2 py-1'>
                 <Link
                     className={`block hover:text-tt-gold ${router.pathname === '/our-story' ? 'text-tt-gold' : 'text-white'}`}
                     href='/our-story'
@@ -33,7 +33,7 @@ export const NavigationList = ({linkClicked}: {linkClicked(): void}): React.Reac
                     {'Hotels'}
                 </Link>
             </li>
-            <li className='py-1 px-2 rounded-md'>
+            <li className='rounded-md px-2 py-1'>
                 <Link
                     className={`block hover:text-tt-gold ${router.pathname === '/explore' ? 'text-tt-gold' : 'text-white'}`}
                     href='/explore'
@@ -42,7 +42,7 @@ export const NavigationList = ({linkClicked}: {linkClicked(): void}): React.Reac
                     {'Explore CR'}
                 </Link>
             </li>
-            <li className='py-1 px-2 rounded-md'>
+            <li className='rounded-md px-2 py-1'>
                 <Link
                     className={`block hover:text-tt-gold ${router.pathname === '/faq' ? 'text-tt-gold' : 'text-white'}`}
                     href='/faq'

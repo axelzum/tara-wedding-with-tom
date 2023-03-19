@@ -62,7 +62,6 @@
     "indent": "error",
     "jsx-quotes": ["error", "prefer-single"],
     "key-spacing": "error",
-    "linebreak-style": "error",
     "no-multi-spaces": "error",
     "no-multiple-empty-lines": "error",
     "no-trailing-spaces": "error",
