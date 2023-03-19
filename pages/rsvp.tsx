@@ -1,16 +1,18 @@
 import Head from 'next/head';
-import {useState} from 'react';
-import {PrismaClient} from '@prisma/client';
+import prisma from '../lib/prisma';
+import {GetStaticProps} from 'next';
+import {Guest} from '@prisma/client';
 
-const Faq = (): React.ReactElement => {
-    const [data, setData] = useState<any>('data');
+export const getStaticProps: GetStaticProps = async () => {
+    const guests = await prisma.guest.findMany();
 
-    const getData = async (e: React.SyntheticEvent): Promise<void> => {
-        const prisma = new PrismaClient();
-        const guests = await prisma.guest.findMany();
-        console.log(guests);
-        // setData();
+    return {
+        props: {guests}
     };
+};
+
+const Faq = ({guests}: {guests: Guest[]}): React.ReactElement => {
+    console.log(guests);
 
     return (
         <>
@@ -19,13 +21,9 @@ const Faq = (): React.ReactElement => {
                 <meta content='RSVP to The Wedding' name='description'/>
             </Head>
 
-            <div className='flex flex-col h-full items-center pb-6'>
-                <h1 className='font-fino font-bold text-center my-6 lg:my-10 text-4xl md:text-5xl xl:text-6xl'>{'RSVP'}</h1>
-
-                <form onSubmit={getData}>
-                    <input type='submit' value='get data'/>
-                </form>
-                <div>{data}</div>
+            <div className='flex h-full flex-col items-center pb-6'>
+                <h1 className='my-6 text-center text-4xl font-bold font-fino md:text-5xl lg:my-10 xl:text-6xl'>{'RSVP'}</h1>
+                {guests.map((guest) => <div key={guest.id}>{guest.name}</div>)}
             </div>
         </>
     );
