@@ -7,21 +7,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model RSVP {
-  id          Int      @id @default(autoincrement())
-  completed   Boolean  @default(false)
-  completedOn DateTime
-  guests      Guest[]
-
-  @@map("rsvps")
+model Guest {
+  id                  Int     @id @default(autoincrement())
+  name                String
+  rsvp                RSVP    @relation(fields: [rsvpId], references: [id])
+  rsvpId              Int
+  attend_wedding      Boolean @default(false)
+  attend_brunch       Boolean @default(false)
+  dietary_restriction String?
 }
 
-model Guest {
-  id        Int     @id @default(autoincrement())
-  name      String
-  rsvp      RSVP    @relation(fields: [rsvpId], references: [id])
-  rsvpId    Int
-  attending Boolean @default(false)
-
-  @@map("guests")
+model RSVP {
+  id                Int     @id @default(autoincrement())
+  completed         Boolean @default(false)
+  guests            Guest[]
+  is_brunch_invited Boolean
+  is_extra_invited  Boolean
 }

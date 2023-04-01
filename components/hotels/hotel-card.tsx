@@ -72,7 +72,7 @@ export const HotelCard = (props: hotelCardProps): React.ReactElement => (
                     <p className='pb-2 text-center text-xs italic'>{props.extraInstructions}</p>}
                 <div className='flex justify-evenly'>
                     <a
-                        className='rounded px-2 py-1 text-sm text-white shadow bg-tt-green hover:bg-tt-gold'
+                        className='rounded-full px-2 py-1 text-sm text-white shadow shadow-tt-green bg-tt-green hover:bg-tt-gold'
                         href={props.hotelWebsite}
                         rel='noopener noreferrer'
                         target='_blank'
@@ -81,7 +81,7 @@ export const HotelCard = (props: hotelCardProps): React.ReactElement => (
                     </a>
                     {props.discountRate &&
                         <a
-                            className='rounded px-2 py-1 text-sm text-white shadow bg-tt-green hover:bg-tt-gold'
+                            className='rounded-full px-2 py-1 text-sm text-white shadow shadow-tt-green bg-tt-green hover:bg-tt-gold'
                             href={props.discountRate}
                             rel='noopener noreferrer'
                             target='_blank'
