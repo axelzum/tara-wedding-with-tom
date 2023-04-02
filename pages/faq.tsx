@@ -34,7 +34,7 @@ const Faq = (): React.ReactElement => (
             />
             <Image
                 alt='Picture of Tom and Tara'
-                className='object-contain hidden md:block w-5/6 pb-6'
+                className='object-contain hidden md:block w-5/6 max-w-5xl pb-6'
                 priority
                 src={faqLandscape}
             />
