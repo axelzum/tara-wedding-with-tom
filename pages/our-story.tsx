@@ -3,7 +3,6 @@ import Image from 'next/image';
 
 import photo1 from '../public/images/our-story/15134742_10209040638067900_78647879223841030_n.jpg';
 import photo2 from '../public/images/our-story/IMG_3845.jpg';
-// import photo3 from '../public/images/our-story/IMG_4294.jpg';
 import photo4 from '../public/images/our-story/IMG_4767.jpeg';
 import photo5 from '../public/images/our-story/IMG_5003.jpeg';
 import photo6 from '../public/images/our-story/IMG_5141.jpeg';
@@ -40,86 +39,97 @@ const Faq = (): React.ReactElement => (
                 <Image
                     alt='1'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo1}
                 />
                 <Image
                     alt='2'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo2}
                 />
-                {/* <Image*/}
-                {/*    alt='3'*/}
-                {/*    className='h-60 w-60 rounded-3xl object-cover sm:h-72 sm:w-72'*/}
-                {/*    src={photo3}*/}
-                {/* />*/}
                 <Image
                     alt='4'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo4}
                 />
                 <Image
                     alt='5'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo5}
                 />
                 <Image
                     alt='6'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo6}
                 />
                 <Image
                     alt='7'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo7}
                 />
                 <Image
                     alt='8'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo8}
                 />
                 <Image
                     alt='9'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo9}
                 />
                 <Image
                     alt='10'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo10}
                 />
                 <Image
                     alt='11'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo11}
                 />
                 <Image
                     alt='12'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo12}
                 />
                 <Image
                     alt='13'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo13}
                 />
                 <Image
                     alt='14'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo14}
                 />
                 <Image
                     alt='15'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo15}
                 />
                 <Image
                     alt='16'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo16}
                 />
                 <Image
                     alt='17'
                     className='h-72 w-72 rounded-3xl object-cover'
+                    placeholder='blur'
                     src={photo17}
                 />
             </div>
