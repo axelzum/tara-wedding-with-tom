@@ -4,7 +4,7 @@ import {useState} from 'react';
 type partyMemberProps = {
     name: string;
     photo1: StaticImageData;
-    photo2: StaticImageData;
+    photo2?: StaticImageData;
 };
 
 export const PartyMember = (props: partyMemberProps): React.ReactElement => {
@@ -12,14 +12,23 @@ export const PartyMember = (props: partyMemberProps): React.ReactElement => {
 
     return (
         <div className='pt-8'>
-            <Image
-                alt={props.name}
-                className='w-60 h-60 sm:w-72 sm:h-72 object-cover rounded-3xl'
-                onMouseOut={(): void => setOver(false)}
-                onMouseOver={(): void => setOver(true)}
-                src={over ? props.photo2 : props.photo1}
-            />
-            <p className='font-quiche text-xl font-bold pt-5'>{props.name}</p>
+            {over &&
+                <Image
+                    alt={props.name}
+                    className='h-60 w-60 rounded-3xl object-cover sm:h-72 sm:w-72'
+                    onMouseOut={(): void => setOver(false)}
+                    onMouseOver={(): void => setOver(true)}
+                    src={props.photo2 || props.photo1}
+                />}
+            {!over &&
+                <Image
+                    alt={props.name}
+                    className='h-60 w-60 rounded-3xl object-cover sm:h-72 sm:w-72'
+                    onMouseOut={(): void => setOver(false)}
+                    onMouseOver={(): void => setOver(true)}
+                    src={props.photo1}
+                />}
+            <p className='pt-5 text-xl font-bold font-quiche'>{props.name}</p>
         </div>
     );
 };

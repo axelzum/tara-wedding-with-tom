@@ -28,13 +28,13 @@ const Faq = (): React.ReactElement => (
 
             <Image
                 alt='Picture of Tom and Tara'
-                className='object-contain md:hidden w-5/6 pb-6'
+                className='w-5/6 object-contain pb-6 md:hidden'
                 priority
                 src={faqPortrait}
             />
             <Image
                 alt='Picture of Tom and Tara'
-                className='object-contain hidden md:block w-5/6 max-w-5xl pb-6'
+                className='hidden w-5/6 max-w-5xl object-contain pb-6 md:block'
                 priority
                 src={faqLandscape}
             />

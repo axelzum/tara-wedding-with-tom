@@ -33,7 +33,7 @@ export const NavigationList = ({linkClicked}: {linkClicked(): void}): React.Reac
                     {'Wedding Party'}
                 </Link>
             </li>
-            <li className='py-1 px-2 rounded-md'>
+            <li className='rounded-md px-2 py-1'>
                 <Link
                     className={`block hover:text-tt-gold ${router.pathname === '/hotels' ? 'text-tt-gold' : 'text-white'}`}
                     href='/hotels'

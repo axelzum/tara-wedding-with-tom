@@ -23,7 +23,8 @@ import austin2 from '../public/images/wedding-party/Austin2.jpg';
 import TJ1 from '../public/images/wedding-party/TJ1.jpg';
 import TJ2 from '../public/images/wedding-party/TJ2.jpg';
 
-import theGals from '../public/images/wedding-party/TheGals.jpeg';
+// import theGals from '../public/images/wedding-party/TheGals.jpeg';
+import placeholder from '../public/images/wedding-party/placeholder-headshot.png';
 
 const Faq = (): React.ReactElement => (
     <>
@@ -32,25 +33,25 @@ const Faq = (): React.ReactElement => (
             <meta content="Tom and Tara's Wedding Party" name='description'/>
         </Head>
 
-        <div className='flex flex-col h-full items-center'>
-            <h1 className='font-fino font-bold text-center my-6 lg:my-10 text-4xl md:text-5xl xl:text-6xl'>{'Wedding Party'}</h1>
+        <div className='flex h-full flex-col items-center'>
+            <h1 className='my-6 text-center text-4xl font-bold font-fino md:text-5xl lg:my-10 xl:text-6xl'>{'Wedding Party'}</h1>
 
-            <div className='flex flex-col gap-28 items-center lg:flex-row w-5/6 lg:justify-evenly pb-6'>
+            <div className='flex w-5/6 flex-col items-center gap-28 pb-6 lg:flex-row lg:justify-evenly'>
                 <div className='flex flex-col text-center'>
-                    <h2 className='font-fino text-3xl md:text-4xl underline'>{'Bridesmaids'}</h2>
-                    <PartyMember name='Axel Zumwalt' photo1={axel1} photo2={theGals}/>
-                    <p className='font-quiche text-lg italic m-0'>{'Man of Honor'}</p>
-                    <PartyMember name='Eve Zumwalt' photo1={eve1} photo2={theGals}/>
-                    <PartyMember name='Harper Bean' photo1={theGals} photo2={theGals}/>
-                    <PartyMember name='Breiana Brown' photo1={theGals} photo2={theGals}/>
-                    <PartyMember name='Katlyn Hardecopf' photo1={theGals} photo2={katlyn2}/>
-                    <PartyMember name='Taylor Millis' photo1={theGals} photo2={theGals}/>
+                    <h2 className='text-3xl underline font-fino md:text-4xl'>{'Bridesmaids'}</h2>
+                    <PartyMember name='Axel Zumwalt' photo1={axel1}/>
+                    <p className='m-0 text-lg italic font-quiche'>{'Man of Honor'}</p>
+                    <PartyMember name='Eve Zumwalt' photo1={eve1}/>
+                    <PartyMember name='Harper Bean' photo1={placeholder}/>
+                    <PartyMember name='Breiana Brown' photo1={placeholder}/>
+                    <PartyMember name='Katlyn Hardecopf' photo1={placeholder} photo2={katlyn2}/>
+                    <PartyMember name='Taylor Millis' photo1={placeholder}/>
                     <PartyMember name='Monica Munier' photo1={monica1} photo2={monica2}/>
                 </div>
                 <div className='flex flex-col text-center'>
-                    <h2 className='font-fino text-3xl md:text-4xl underline'>{'Groomsmen'}</h2>
+                    <h2 className='text-3xl underline font-fino md:text-4xl'>{'Groomsmen'}</h2>
                     <PartyMember name='Brandon Phipps' photo1={brandon1} photo2={brandon2}/>
-                    <p className='font-quiche text-lg italic'>{'Best Man'}</p>
+                    <p className='text-lg italic font-quiche'>{'Best Man'}</p>
                     <PartyMember name='Peter Dirks' photo1={peter1} photo2={peter2}/>
                     <PartyMember name='Dustin Fox' photo1={dustin1} photo2={dustin2}/>
                     <PartyMember name='Wesley Humphrey' photo1={wesley1} photo2={wesley2}/>
