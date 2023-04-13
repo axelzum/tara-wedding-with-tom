@@ -42,7 +42,7 @@ export const NavigationLayout = ({children}: {children: React.ReactElement}): Re
                         </div>
                     </div>
                     <div
-                        className={`absolute w-5/6 left-0 right-0 mx-auto bg-marble bg-contain rounded-b-lg transition-transform origin-top duration-200 ${open ? 'scale-y-100' : 'scale-y-0'}`}
+                        className={`z-[1000] absolute w-5/6 left-0 right-0 mx-auto bg-marble bg-contain rounded-b-lg transition-transform origin-top duration-200 ${open ? 'scale-y-100' : 'scale-y-0'}`}
                     >
                         <NavigationList linkClicked={closeDropdown}/>
                     </div>

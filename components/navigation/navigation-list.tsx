@@ -53,6 +53,15 @@ export const NavigationList = ({linkClicked}: {linkClicked(): void}): React.Reac
             </li>
             <li className='rounded-md px-2 py-1'>
                 <Link
+                    className={`block hover:text-tt-gold ${router.pathname === '/registry' ? 'text-tt-gold' : 'text-white'}`}
+                    href='/registry'
+                    onClick={linkClicked}
+                >
+                    {'Registry'}
+                </Link>
+            </li>
+            <li className='rounded-md px-2 py-1'>
+                <Link
                     className={`block hover:text-tt-gold ${router.pathname === '/faq' ? 'text-tt-gold' : 'text-white'}`}
                     href='/faq'
                     onClick={linkClicked}
