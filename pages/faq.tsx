@@ -1,5 +1,9 @@
 import Head from 'next/head';
 import {QuestionAnswer} from '../components/faq/question-answer';
+import Image from 'next/image';
+
+import faqPortrait from '../public/images/faq/faq-portrait.jpg';
+import faqLandscape from '../public/images/faq/faq-landscape.jpg';
 
 const Faq = (): React.ReactElement => (
     <>
@@ -21,6 +25,19 @@ const Faq = (): React.ReactElement => (
                     question='Are the ceremony and reception at the same place?'
                 />
             </div>
+
+            <Image
+                alt='Picture of Tom and Tara'
+                className='w-5/6 object-contain pb-6 md:hidden'
+                priority
+                src={faqPortrait}
+            />
+            <Image
+                alt='Picture of Tom and Tara'
+                className='hidden w-5/6 max-w-5xl object-contain pb-6 md:block'
+                priority
+                src={faqLandscape}
+            />
         </div>
     </>
 );
