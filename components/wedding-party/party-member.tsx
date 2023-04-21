@@ -1,5 +1,5 @@
 import Image, {StaticImageData} from 'next/image';
-import {useState} from 'react';
+import React, {useState} from 'react';
 
 type partyMemberProps = {
     name: string;
@@ -15,8 +15,7 @@ export const PartyMember = (props: partyMemberProps): React.ReactElement => {
             <Image
                 alt={props.name}
                 className='h-60 w-60 rounded-3xl object-cover sm:h-72 sm:w-72'
-                onMouseOut={(): void => setOver(false)}
-                onMouseOver={(): void => setOver(true)}
+                onClick={(): void => setOver(!over)}
                 placeholder='blur'
                 src={over ? props.photo2 || props.photo1 : props.photo1}
             />

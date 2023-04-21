@@ -52,13 +52,14 @@ export const NavigationList = ({linkClicked}: {linkClicked(): void}): React.Reac
                 </Link>
             </li>
             <li className='rounded-md px-2 py-1'>
-                <Link
+                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                <a
                     className={`block hover:text-tt-gold ${router.pathname === '/registry' ? 'text-tt-gold' : 'text-white'}`}
                     href='/registry'
                     onClick={linkClicked}
                 >
                     {'Registry'}
-                </Link>
+                </a>
             </li>
             <li className='rounded-md px-2 py-1'>
                 <Link
