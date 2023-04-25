@@ -33,9 +33,9 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                             {data.rsvp?.is_rehersal_invited &&
                                 <>
                                     <div className='my-5'>
-                                        <p className='font-bold'>{'Rehearsal Dinner'}</p>
-                                        <p className='italic'>{'Friday, June 23, ?:??'}</p>
-                                        <p className='italic'>{'??'}</p>
+                                        <p className='font-bold'>{'Rehearsal (Dinner Afterward)'}</p>
+                                        <p className='italic'>{'Friday, June 23, 5:00pm'}</p>
+                                        <p className='italic'>{'The HarMac, Cedar Rapids'}</p>
                                     </div>
                                     <div className='flex flex-row justify-center gap-5 text-center'>
                                         <div
@@ -95,8 +95,8 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                 </>}
                             <div className='my-5'>
                                 <p className='font-bold'>{'Ceremony & Reception'}</p>
-                                <p className='italic'>{'Saturday, June 24, ?:??'}</p>
-                                <p className='italic'>{'HarMac Event Center, Cedar Rapids'}</p>
+                                <p className='italic'>{'Saturday, June 24, 4:30pm'}</p>
+                                <p className='italic'>{'The HarMac, Cedar Rapids'}</p>
                             </div>
                             <div className='flex flex-row justify-center gap-5 text-center'>
                                 <div
@@ -156,8 +156,8 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                             {data.rsvp?.is_brunch_invited &&
                                 <>
                                     <div className='my-5'>
-                                        <p className='font-bold'>{'Family Brunch'}</p>
-                                        <p className='italic'>{'Sunday, June 25, ?:??'}</p>
+                                        <p className='font-bold'>{'Sunday Brunch'}</p>
+                                        <p className='italic'>{'Sunday, June 25, 9am-12pm'}</p>
                                         <p className='italic'>{'1500 8th Street, Marion'}</p>
                                     </div>
                                     <div className='flex flex-row justify-center gap-5 text-center'>
@@ -317,9 +317,9 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                     {data.rsvp.is_rehersal_invited &&
                                         <>
                                             <div className='my-5'>
-                                                <p className='font-bold'>{'Rehearsal Dinner'}</p>
-                                                <p className='italic'>{'Friday, June 23, ?:??'}</p>
-                                                <p className='italic'>{'??'}</p>
+                                                <p className='font-bold'>{'Rehearsal (Dinner Afterward)'}</p>
+                                                <p className='italic'>{'Friday, June 23, 5:00pm'}</p>
+                                                <p className='italic'>{'The HarMac, Cedar Rapids'}</p>
                                             </div>
                                             <div className='flex flex-row justify-center gap-5 text-center'>
                                                 <div
@@ -382,8 +382,8 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                         </>}
                                     <div className='my-5'>
                                         <p className='font-bold'>{'Ceremony & Reception'}</p>
-                                        <p className='italic'>{'Saturday, June 24, ?:??'}</p>
-                                        <p className='italic'>{'HarMac Event Center, Cedar Rapids'}</p>
+                                        <p className='italic'>{'Saturday, June 24, 4:30pm'}</p>
+                                        <p className='italic'>{'The HarMac, Cedar Rapids'}</p>
                                     </div>
                                     <div className='flex flex-row justify-center gap-5 text-center'>
                                         <div
@@ -445,8 +445,8 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                     {data.rsvp.is_brunch_invited &&
                                         <>
                                             <div className='my-5'>
-                                                <p className='font-bold'>{'Family Brunch'}</p>
-                                                <p className='italic'>{'Sunday, June 25, ?:??'}</p>
+                                                <p className='font-bold'>{'Sunday Brunch'}</p>
+                                                <p className='italic'>{'Sunday, June 25, 9am-12pm'}</p>
                                                 <p className='italic'>{'1500 8th Street, Marion'}</p>
                                             </div>
                                             <div className='flex flex-row justify-center gap-5 text-center'>
