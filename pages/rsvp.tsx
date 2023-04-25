@@ -70,6 +70,7 @@ const Faq = (): React.ReactElement => {
                 <div className='flex flex-col justify-center items-center w-5/6 text-center font-quiche'>
                     <p>{'Please enter your full first and last name.'}</p>
                     <p>{'This RSVP includes your entire group.'}</p>
+                    <p>{'If you have any issues or questions contact the bride or groom.'}</p>
                     <form
                         className='w-[20rem] font-quiche'
                         /* eslint-disable-next-line @typescript-eslint/no-misused-promises */
