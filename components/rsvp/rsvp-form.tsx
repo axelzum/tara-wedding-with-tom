@@ -1,7 +1,7 @@
 import React from 'react';
 import {RsvpDataType} from '../../pages/rsvp';
 
-/* eslint-disable @typescript-eslint/no-unnecessary-condition,@typescript-eslint/ban-ts-comment,no-magic-numbers */
+/* eslint-disable @typescript-eslint/no-unnecessary-condition,@typescript-eslint/ban-ts-comment,no-magic-numbers,@typescript-eslint/no-unsafe-assignment */
 
 type RsvpFormProps = {
     data: RsvpDataType;
@@ -9,7 +9,6 @@ type RsvpFormProps = {
 };
 
 export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => {
-    console.log(data);
     if (data.error) {
         return (
             <div className='font-quiche w-5/6 flex flex-col items-center mt-20 text-center'>
@@ -31,6 +30,69 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                     {data.guests.map((guest, index) => (
                         <div className='my-10' key={guest.id}>
                             <p className='text-2xl font-bold underline'>{guest.name}</p>
+                            {data.rsvp?.is_rehersal_invited &&
+                                <>
+                                    <div className='my-5'>
+                                        <p className='font-bold'>{'Rehearsal Dinner'}</p>
+                                        <p className='italic'>{'Friday, June 23, ?:??'}</p>
+                                        <p className='italic'>{'??'}</p>
+                                    </div>
+                                    <div className='flex flex-row justify-center gap-5 text-center'>
+                                        <div
+                                            className='flex w-36 h-10 leading-10 border rounded-md border-gray-300 shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                        >
+                                            <input
+                                                /* @ts-ignore */
+                                                checked={data.guests[index].attend_rehersal === null ? false : data.guests[index].attend_rehersal}
+                                                className='hidden peer'
+                                                id={`${guest.id.toString().concat('rehersal')}-1`}
+                                                name={guest.id.toString().concat('rehersal')}
+                                                onChange={(): void => {
+                                                    const newGuests = [...data.guests!];
+                                                    newGuests[index].attend_rehersal = true;
+                                                    setData({
+                                                        ...data,
+                                                        guests: newGuests
+                                                    });
+                                                }}
+                                                type='radio'
+                                                value=''
+                                            />
+                                            <label
+                                                className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                htmlFor={`${guest.id.toString().concat('rehersal')}-1`}
+                                            >
+                                                {'Accept'}
+                                            </label>
+                                        </div>
+                                        <div
+                                            className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                        >
+                                            <input
+                                                checked={data.guests![index].attend_rehersal !== null && !data.guests![index].attend_rehersal}
+                                                className='hidden peer'
+                                                id={`${guest.id.toString().concat('rehersal')}-2`}
+                                                name={guest.id.toString().concat('rehersal')}
+                                                onChange={(): void => {
+                                                    const newGuests = [...data.guests!];
+                                                    newGuests[index].attend_rehersal = false;
+                                                    setData({
+                                                        ...data,
+                                                        guests: newGuests
+                                                    });
+                                                }}
+                                                type='radio'
+                                                value=''
+                                            />
+                                            <label
+                                                className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                htmlFor={`${guest.id.toString().concat('rehersal')}-2`}
+                                            >
+                                                {'Decline'}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </>}
                             <div className='my-5'>
                                 <p className='font-bold'>{'Ceremony & Reception'}</p>
                                 <p className='italic'>{'Saturday, June 24, ?:??'}</p>
@@ -42,7 +104,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                 >
                                     <input
                                         /* @ts-ignore */
-                                        checked={data.guests![index].attend_wedding === null ? undefined : data.guests[index].attend_wedding}
+                                        checked={data.guests[index].attend_wedding === null ? false : data.guests[index].attend_wedding}
                                         className='hidden peer'
                                         id={`${guest.id.toString().concat('wedding')}-1`}
                                         name={guest.id.toString().concat('wedding')}
@@ -68,7 +130,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                     className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
                                 >
                                     <input
-                                        checked={data.guests![index].attend_wedding === null ? undefined : !data.guests![index].attend_wedding}
+                                        checked={data.guests![index].attend_wedding !== null && !data.guests![index].attend_wedding}
                                         className='hidden peer'
                                         id={`${guest.id.toString().concat('wedding')}-2`}
                                         name={guest.id.toString().concat('wedding')}
@@ -104,7 +166,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                         >
                                             <input
                                                 /* @ts-ignore */
-                                                checked={data.guests![index].attend_brunch === null ? undefined : data.guests[index].attend_brunch}
+                                                checked={data.guests[index].attend_brunch === null ? false : data.guests[index].attend_brunch}
                                                 className='hidden peer'
                                                 id={`${guest.id.toString().concat('brunch')}-1`}
                                                 name={guest.id.toString().concat('brunch')}
@@ -130,7 +192,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                             className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
                                         >
                                             <input
-                                                checked={data.guests![index].attend_brunch === null ? undefined : !data.guests![index].attend_brunch}
+                                                checked={data.guests![index].attend_brunch !== null && !data.guests![index].attend_brunch}
                                                 className='hidden peer'
                                                 id={`${guest.id.toString().concat('brunch')}-2`}
                                                 name={guest.id.toString().concat('brunch')}
@@ -179,7 +241,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                 >
                                     <input
                                         /* @ts-ignore */ /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
-                                        checked={data.rsvp.attend_guest === null ? undefined : data.rsvp.attend_guest}
+                                        checked={data.rsvp.attend_guest}
                                         className='hidden peer'
                                         id='extra-1'
                                         name='extra'
@@ -206,7 +268,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                     className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
                                 >
                                     <input
-                                        checked={data.rsvp?.attend_guest === null ? undefined : !data.rsvp.attend_guest}
+                                        checked={data.rsvp?.attend_guest !== null && !data.rsvp.attend_guest}
                                         className='hidden peer'
                                         id='extra-2'
                                         name='extra'
@@ -215,7 +277,12 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                 ...data,
                                                 rsvp: {
                                                     ...data.rsvp!,
-                                                    attend_guest: false
+                                                    attend_guest: false,
+                                                    extra_wedding: null,
+                                                    extra_name: null,
+                                                    extra_brunch: null,
+                                                    extra_dietary: null,
+                                                    extra_rehersal: null
                                                 }
                                             });
                                         }}
@@ -232,7 +299,87 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                             </div>
                             {data.rsvp.attend_guest &&
                                 <div className='my-10'>
-                                    <p className='text-2xl font-bold underline'>{'todo guest name'}</p>
+                                    <input
+                                        className='w-full my-2 rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring focus:ring-tt-green focus:ring-opacity-50'
+                                        onChange={(event): void => {
+                                            setData({
+                                                ...data,
+                                                rsvp: {
+                                                    ...data.rsvp!,
+                                                    extra_name: event.target.value
+                                                }
+                                            });
+                                        }}
+                                        placeholder="Enter Your Guest's Name Here"
+                                        type='text'
+                                        value={data.rsvp.extra_name || undefined}
+                                    />
+                                    {data.rsvp.is_rehersal_invited &&
+                                        <>
+                                            <div className='my-5'>
+                                                <p className='font-bold'>{'Rehearsal Dinner'}</p>
+                                                <p className='italic'>{'Friday, June 23, ?:??'}</p>
+                                                <p className='italic'>{'??'}</p>
+                                            </div>
+                                            <div className='flex flex-row justify-center gap-5 text-center'>
+                                                <div
+                                                    className='flex w-36 h-10 leading-10 border rounded-md border-gray-300 shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                                >
+                                                    <input
+                                                        /* @ts-ignore */ /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
+                                                        checked={data.rsvp.extra_rehersal}
+                                                        className='hidden peer'
+                                                        id='extrarehersal-1'
+                                                        name='extrarehersal'
+                                                        onChange={(): void => {
+                                                            setData({
+                                                                ...data,
+                                                                rsvp: {
+                                                                    ...data.rsvp!,
+                                                                    extra_rehersal: true
+                                                                }
+                                                            });
+                                                        }}
+                                                        type='radio'
+                                                        value=''
+                                                    />
+                                                    <label
+                                                        className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                        htmlFor='extrarehersal-1'
+                                                    >
+                                                        {'Accept'}
+                                                    </label>
+                                                </div>
+                                                <div
+                                                    className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                                >
+                                                    <input
+                                                        /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
+                                                        checked={data.rsvp.extra_rehersal !== null && !data.rsvp.extra_rehersal}
+                                                        className='hidden peer'
+                                                        id='extrarehersal-2'
+                                                        name='extrarehersal'
+                                                        onChange={(): void => {
+                                                            setData({
+                                                                ...data,
+                                                                rsvp: {
+                                                                    ...data.rsvp!,
+                                                                    extra_rehersal: false
+                                                                }
+                                                            });
+                                                        }}
+                                                        type='radio'
+                                                        value=''
+                                                    />
+                                                    <label
+                                                        className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                        htmlFor='extrarehersal-2'
+                                                    >
+                                                        {'Decline'}
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </>}
                                     <div className='my-5'>
                                         <p className='font-bold'>{'Ceremony & Reception'}</p>
                                         <p className='italic'>{'Saturday, June 24, ?:??'}</p>
@@ -244,7 +391,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                         >
                                             <input
                                                 /* @ts-ignore */ /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
-                                                checked={data.rsvp.extra_wedding === null ? undefined : data.rsvp.extra_wedding}
+                                                checked={data.rsvp.extra_wedding}
                                                 className='hidden peer'
                                                 id='extrawedding-1'
                                                 name='extrawedding'
@@ -271,7 +418,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                             className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
                                         >
                                             <input
-                                                checked={data.rsvp.extra_wedding === null ? undefined : !data.rsvp.extra_wedding}
+                                                checked={data.rsvp.extra_wedding !== null && !data.rsvp.extra_wedding}
                                                 className='hidden peer'
                                                 id='extrawedding-2'
                                                 name='extrawedding'
@@ -308,7 +455,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                 >
                                                     <input
                                                         /* @ts-ignore */ /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
-                                                        checked={data.rsvp.extra_brunch === null ? undefined : data.rsvp.extra_brunch}
+                                                        checked={data.rsvp.extra_brunch}
                                                         className='hidden peer'
                                                         id='extrabrunch-1'
                                                         name='extrabrunch'
@@ -336,7 +483,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                 >
                                                     <input
                                                         /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
-                                                        checked={data.rsvp.extra_brunch === null ? undefined : data.rsvp.extra_brunch}
+                                                        checked={data.rsvp.extra_brunch !== null && !data.rsvp.extra_brunch}
                                                         className='hidden peer'
                                                         id='extrabrunch-2'
                                                         name='extrabrunch'

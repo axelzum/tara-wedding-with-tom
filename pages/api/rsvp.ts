@@ -8,11 +8,34 @@ import {
 } from '../../constants/status-codes';
 import prisma from '../../lib/prisma';
 
+/* eslint-disable @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
+
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
     if (req.method === 'POST') {
-        console.log('post', req);
-    }
-    else if (req.method === 'GET') {
+        const rsvp = req.body.rsvp;
+        rsvp.completed = true;
+        try {
+            const updateRsvp = await prisma.rSVP.update({
+                where: {
+                    id: rsvp.id
+                },
+                data: rsvp
+            });
+            const guests = req.body.guests;
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+            guests.map(async (guest: {id: any}) => {
+                await prisma.guest.update({
+                    where: {
+                        id: guest.id
+                    },
+                    data: guest
+                });
+            });
+            res.status(RESPONSE_OK).json('Success');
+        } catch (e) {
+            res.status(RESPONSE_INTERNAL_SERVER_ERROR).json({error: e});
+        }
+    } else if (req.method === 'GET') {
         const {name} = req.query;
 
         if (typeof name !== 'string') {

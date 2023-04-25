@@ -13,21 +13,22 @@ export type RsvpDataType = {
 
 const isSubmitButtonDisabled = (rsvpData: RsvpDataType): boolean => {
     const areGuestsIncomplete = rsvpData.guests!.filter((guest) => {
-        if (rsvpData.rsvp?.is_brunch_invited) {
-            return guest.attend_wedding === null || guest.attend_brunch === null;
-        }
-        return guest.attend_wedding === null;
+        const isWeddingNull = guest.attend_wedding === null;
+        const isBrunchNull = rsvpData.rsvp?.is_brunch_invited ? guest.attend_brunch === null : false;
+        const isRehersalNull = rsvpData.rsvp?.is_rehersal_invited ? guest.attend_rehersal === null : false;
+
+        return isWeddingNull || isBrunchNull || isRehersalNull;
     }).length > 0;
+    console.log(areGuestsIncomplete);
 
     if (rsvpData.rsvp?.is_extra_invited) {
-        const isExtraIncomplete = rsvpData.rsvp.extra_wedding === null || rsvpData.rsvp.extra_name === null;
-        if (rsvpData.rsvp.attend_guest === null) {
-            return true;
-        } else if (rsvpData.rsvp.attend_guest){
-            return rsvpData.rsvp.is_brunch_invited ?
-                areGuestsIncomplete || isExtraIncomplete || rsvpData.rsvp.extra_brunch === null :
-                areGuestsIncomplete || isExtraIncomplete;
-        }
+        const isExtraWeddingNull = rsvpData.rsvp.extra_wedding === null;
+        const isExtraBrunchNull = rsvpData.rsvp.is_brunch_invited ? rsvpData.rsvp.extra_brunch === null : false;
+        const isExtraRehersalNull = rsvpData.rsvp?.is_rehersal_invited ? rsvpData.rsvp.extra_rehersal === null : false;
+
+        return rsvpData.rsvp.attend_guest === false ?
+            areGuestsIncomplete :
+            areGuestsIncomplete || isExtraWeddingNull || isExtraBrunchNull || isExtraRehersalNull || rsvpData.rsvp.extra_name === null || rsvpData.rsvp.extra_name === '';
     }
     return areGuestsIncomplete;
 };
@@ -39,9 +40,6 @@ const fetchRSVP = async (event: React.FormEvent<HTMLFormElement>): Promise<Respo
     await fetch(`/api/rsvp/?name=${event.target.name.value}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
-        // body: JSON.stringify({
-        //     name: event.target.name.value
-        // })
     });
 
 const postRSVP = async (rsvpData: RsvpDataType): Promise<Response> => {
@@ -57,6 +55,7 @@ const postRSVP = async (rsvpData: RsvpDataType): Promise<Response> => {
 const Faq = (): React.ReactElement => {
     const [rsvpLoading, setRsvpLoading] = useState<boolean>(false);
     const [rsvpData, setRsvpData] = useState<RsvpDataType>();
+    const [submitSuccess, setSubmitSuccess] = useState<boolean|undefined>();
 
     return (
         <>
@@ -68,7 +67,7 @@ const Faq = (): React.ReactElement => {
             <div className='flex h-full flex-col items-center pb-6'>
                 <h1 className='my-6 text-center text-4xl font-bold font-fino md:text-5xl lg:my-10 xl:text-6xl'>{'RSVP'}</h1>
 
-                <div className='flex flex-col items-center w-5/6 text-center font-quiche'>
+                <div className='flex flex-col justify-center items-center w-5/6 text-center font-quiche'>
                     <p>{'Please enter your full first and last name.'}</p>
                     <p>{'This RSVP includes your entire group.'}</p>
                     <form
@@ -81,6 +80,7 @@ const Faq = (): React.ReactElement => {
                             // eslint-disable-next-line
                             if (event.target.name.value.length > 0) {
                                 setRsvpLoading(true);
+                                setSubmitSuccess(undefined);
                                 await fetchRSVP(event)
                                     .then((response) => response.json())
                                     .then((data) => {
@@ -92,7 +92,7 @@ const Faq = (): React.ReactElement => {
                             }
                         }}
                     >
-                        <input className='m-2 w-full rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring focus:ring-tt-green focus:ring-opacity-50' name='name' type='text'/>
+                        <input className='w-full my-2 rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring focus:ring-tt-green focus:ring-opacity-50' name='name' type='text'/>
                         <button
                             className={`rounded-full ${rsvpLoading ? 'w-2/5' : 'w-1/3'} px-1 py-2 text-sm text-white shadow shadow-tt-green bg-tt-green hover:bg-tt-gold`}
                             type='submit'
@@ -129,9 +129,17 @@ const Faq = (): React.ReactElement => {
                             /* eslint-disable-next-line @typescript-eslint/no-misused-promises */
                             onClick={async (): Promise<void> => {
                                 setRsvpLoading(true);
-                                await postRSVP(rsvpData).then((response) => {
-                                    console.log('response2', response);
-                                });
+                                await postRSVP(rsvpData)
+                                    .then((response) => response.json())
+                                    .then((data) => {
+                                        console.log('data', data);
+                                        setRsvpData(undefined);
+                                        if (data === 'Success') {
+                                            setSubmitSuccess(true);
+                                        } else {
+                                            setSubmitSuccess(false);
+                                        }
+                                    });
                                 setRsvpLoading(false);
                             }}
                         >
@@ -154,6 +162,17 @@ const Faq = (): React.ReactElement => {
                             </svg>
                             {'Submit'}
                         </button>
+                    </div>}
+                {submitSuccess !== undefined && !submitSuccess &&
+                    <div className='font-quiche w-5/6 flex flex-col items-center mt-20 text-center'>
+                        <p className='font-bold'>{'Something went wrong with your request.'}</p>
+                        <p>{'Please contact the bride or groom to submit your RSVP.'}</p>
+                    </div>}
+                {submitSuccess !== undefined && submitSuccess &&
+                    <div className='font-quiche w-5/6 flex flex-col items-center mt-20 text-center'>
+                        <p className='font-bold'>{'Thank you for your response!'}</p>
+                        <p>{'We cannot wait to celebrate with you.'}</p>
+                        <p>{'You can come back any time to view your selections or make an update.'}</p>
                     </div>}
             </div>
         </>
