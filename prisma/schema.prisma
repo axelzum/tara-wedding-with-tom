@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Guest {
+  id                  Int      @id @default(autoincrement())
+  name                String
+  rsvp                RSVP     @relation(fields: [rsvpId], references: [id])
+  rsvpId              Int
+  attend_wedding      Boolean?
+  attend_brunch       Boolean?
+  attend_rehersal     Boolean?
+  dietary_restriction String?
+}
+
+model RSVP {
+  id                  Int      @id @default(autoincrement())
+  completed           Boolean  @default(false)
+  guests              Guest[]
+  is_rehersal_invited Boolean
+  is_brunch_invited   Boolean
+  is_extra_invited    Boolean
+  attend_guest        Boolean?
+  extra_name          String?
+  extra_wedding       Boolean?
+  extra_brunch        Boolean?
+  extra_rehersal      Boolean?
+  extra_dietary       String?
+}

@@ -70,6 +70,15 @@ export const NavigationList = ({linkClicked}: {linkClicked(): void}): React.Reac
                     {'FAQ'}
                 </Link>
             </li>
+            <li className='rounded-md px-2 py-1'>
+                <Link
+                    className={`block hover:text-tt-gold ${router.pathname === '/rsvp' ? 'text-tt-gold' : 'text-white'}`}
+                    href='/rsvp'
+                    onClick={linkClicked}
+                >
+                    {'RSVP'}
+                </Link>
+            </li>
         </ul>
     );
 };
