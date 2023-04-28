@@ -234,7 +234,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                     ))}
                     {data.rsvp.is_extra_invited &&
                         <>
-                            <p className='font-bold'>{'Are you bringing a guest?'}</p>
+                            <p className='font-bold text-lg mb-2'>{'Are you bringing a guest?'}</p>
                             <div className='flex flex-row justify-center gap-5 text-center mb-5'>
                                 <div
                                     className='flex w-36 h-10 leading-10 border rounded-md border-gray-300 shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
@@ -300,7 +300,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                             {data.rsvp.attend_guest &&
                                 <div className='my-10'>
                                     <input
-                                        className='w-full my-2 rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring focus:ring-tt-green focus:ring-opacity-50'
+                                        className='w-full my-2 underline text-2xl font-bold rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring focus:ring-tt-green focus:ring-opacity-50'
                                         onChange={(event): void => {
                                             setData({
                                                 ...data,

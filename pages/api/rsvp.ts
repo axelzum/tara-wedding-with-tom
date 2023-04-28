@@ -45,7 +45,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
 
         try {
             const guest = await prisma.guest.findFirst({
-                where: {name},
+                where: {
+                    name: {
+                        equals: name,
+                        mode: 'insensitive'
+                    }
+                },
                 select: {
                     rsvpId: true
                 }
@@ -68,6 +73,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
                     rsvpId: rsvp.id
                 }
             });
+            guests.sort((a, b) => a.id - b.id);
             res.status(RESPONSE_OK).json({rsvp, guests});
         } catch (e) {
             res.status(RESPONSE_INTERNAL_SERVER_ERROR).json({error: e});

@@ -19,7 +19,6 @@ const isSubmitButtonDisabled = (rsvpData: RsvpDataType): boolean => {
 
         return isWeddingNull || isBrunchNull || isRehersalNull;
     }).length > 0;
-    console.log(areGuestsIncomplete);
 
     if (rsvpData.rsvp?.is_extra_invited) {
         const isExtraWeddingNull = rsvpData.rsvp.extra_wedding === null;
@@ -48,7 +47,6 @@ const postRSVP = async (rsvpData: RsvpDataType): Promise<Response> => {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(rsvpData)
     });
-    console.log('response1', response);
     return response;
 };
 
@@ -69,7 +67,7 @@ const Faq = (): React.ReactElement => {
 
                 <div className='flex flex-col justify-center items-center w-5/6 text-center font-quiche'>
                     <p>{'Please enter your full first and last name.'}</p>
-                    <p>{'This RSVP includes your entire group.'}</p>
+                    <p>{'This RSVP will include your entire family or invited party.'}</p>
                     <p>{'If you have any issues or questions contact the bride or groom.'}</p>
                     <form
                         className='w-[20rem] font-quiche'
@@ -115,7 +113,7 @@ const Faq = (): React.ReactElement => {
                                     fill='currentColor'
                                 />
                             </svg>
-                            {'Get RSVP'}
+                            {'Fetch RSVP'}
                         </button>
                     </form>
                 </div>
@@ -125,7 +123,7 @@ const Faq = (): React.ReactElement => {
                 {(rsvpData && !rsvpData.error) &&
                     <div className='flex items-center w-[20rem] pb-6'>
                         <button
-                            className={`rounded-full ${rsvpLoading ? 'w-2/5' : 'w-1/3'} m-auto px-1 py-2 text-white shadow shadow-tt-green bg-tt-green hover:bg-tt-gold disabled:opacity-60 disabled:hover:bg-tt-green`}
+                            className={`rounded-full ${rsvpLoading ? 'w-2/5' : 'w-1/3'} m-auto px-1 py-2 text-white font-quiche shadow shadow-tt-green bg-tt-green hover:bg-tt-gold disabled:opacity-60 disabled:hover:bg-tt-green`}
                             disabled={isSubmitButtonDisabled(rsvpData)}
                             /* eslint-disable-next-line @typescript-eslint/no-misused-promises */
                             onClick={async (): Promise<void> => {
@@ -133,7 +131,6 @@ const Faq = (): React.ReactElement => {
                                 await postRSVP(rsvpData)
                                     .then((response) => response.json())
                                     .then((data) => {
-                                        console.log('data', data);
                                         setRsvpData(undefined);
                                         if (data === 'Success') {
                                             setSubmitSuccess(true);
