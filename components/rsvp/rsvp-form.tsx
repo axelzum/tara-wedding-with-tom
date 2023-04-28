@@ -11,7 +11,7 @@ type RsvpFormProps = {
 export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => {
     if (data.error) {
         return (
-            <div className='font-quiche w-5/6 flex flex-col items-center mt-20 text-center'>
+            <div className='mt-20 flex w-5/6 flex-col items-center text-center font-quiche'>
                 <p className='font-bold'>{data.error}</p>
                 <p>{'Please make sure to enter your full first and last name.'}</p>
                 <p>{'If you are known by a nickname, try the name your invitation was addressed too.'}</p>
@@ -20,8 +20,8 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
         );
     } else if (data.guests && data.rsvp) {
         return (
-            <div className='font-quiche w-5/6 flex flex-col items-center'>
-                <div className='w-1/2 min-w-[20rem] text-center'>
+            <div className='flex w-5/6 flex-col items-center font-quiche'>
+                <div className='w-1/2 text-center min-w-[20rem]'>
                     {data.rsvp.completed &&
                         <div>
                             <p className='mt-5'>{'You have already completed your RSVP.'}</p>
@@ -39,7 +39,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                     </div>
                                     <div className='flex flex-row justify-center gap-5 text-center'>
                                         <div
-                                            className='flex w-36 h-10 leading-10 border rounded-md border-gray-300 shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                            className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                         >
                                             <input
                                                 /* @ts-ignore */
@@ -59,14 +59,14 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                 value=''
                                             />
                                             <label
-                                                className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                                 htmlFor={`${guest.id.toString().concat('rehersal')}-1`}
                                             >
                                                 {'Accept'}
                                             </label>
                                         </div>
                                         <div
-                                            className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                            className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                         >
                                             <input
                                                 checked={data.guests![index].attend_rehersal !== null && !data.guests![index].attend_rehersal}
@@ -85,7 +85,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                 value=''
                                             />
                                             <label
-                                                className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                                 htmlFor={`${guest.id.toString().concat('rehersal')}-2`}
                                             >
                                                 {'Decline'}
@@ -100,7 +100,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                             </div>
                             <div className='flex flex-row justify-center gap-5 text-center'>
                                 <div
-                                    className='flex w-36 h-10 leading-10 border rounded-md border-gray-300 shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                    className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                 >
                                     <input
                                         /* @ts-ignore */
@@ -120,14 +120,14 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                         value=''
                                     />
                                     <label
-                                        className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                        className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                         htmlFor={`${guest.id.toString().concat('wedding')}-1`}
                                     >
                                         {'Accept'}
                                     </label>
                                 </div>
                                 <div
-                                    className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                    className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                 >
                                     <input
                                         checked={data.guests![index].attend_wedding !== null && !data.guests![index].attend_wedding}
@@ -146,7 +146,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                         value=''
                                     />
                                     <label
-                                        className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                        className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                         htmlFor={`${guest.id.toString().concat('wedding')}-2`}
                                     >
                                         {'Decline'}
@@ -162,7 +162,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                     </div>
                                     <div className='flex flex-row justify-center gap-5 text-center'>
                                         <div
-                                            className='flex w-36 h-10 leading-10 border rounded-md border-gray-300 shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                            className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                         >
                                             <input
                                                 /* @ts-ignore */
@@ -182,14 +182,14 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                 value=''
                                             />
                                             <label
-                                                className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                                 htmlFor={`${guest.id.toString().concat('brunch')}-1`}
                                             >
                                                 {'Accept'}
                                             </label>
                                         </div>
                                         <div
-                                            className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                            className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                         >
                                             <input
                                                 checked={data.guests![index].attend_brunch !== null && !data.guests![index].attend_brunch}
@@ -208,7 +208,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                 value=''
                                             />
                                             <label
-                                                className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                                 htmlFor={`${guest.id.toString().concat('brunch')}-2`}
                                             >
                                                 {'Decline'}
@@ -216,9 +216,9 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                         </div>
                                     </div>
                                 </>}
-                            <p className='mt-5 font-bold text-left'>{'Dietary Restrictions:'}</p>
+                            <p className='mt-5 text-left font-bold'>{'Dietary Restrictions:'}</p>
                             <textarea
-                                className='w-full rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring focus:ring-tt-green focus:ring-opacity-50'
+                                className='w-full rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring-tt-green focus:ring focus:ring-opacity-50'
                                 onChange={(event): void => {
                                     const newGuests = [...data.guests!];
                                     newGuests[index].dietary_restriction = event.target.value.length > 0 ? event.target.value : null;
@@ -234,10 +234,10 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                     ))}
                     {data.rsvp.is_extra_invited &&
                         <>
-                            <p className='font-bold text-lg mb-2'>{'Are you bringing a guest?'}</p>
-                            <div className='flex flex-row justify-center gap-5 text-center mb-5'>
+                            <p className='mb-2 text-lg font-bold'>{'Are you bringing a guest?'}</p>
+                            <div className='mb-5 flex flex-row justify-center gap-5 text-center'>
                                 <div
-                                    className='flex w-36 h-10 leading-10 border rounded-md border-gray-300 shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                    className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                 >
                                     <input
                                         /* @ts-ignore */ /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
@@ -258,14 +258,14 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                         value=''
                                     />
                                     <label
-                                        className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                        className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                         htmlFor='extra-1'
                                     >
                                         {'Yes'}
                                     </label>
                                 </div>
                                 <div
-                                    className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                    className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                 >
                                     <input
                                         checked={data.rsvp?.attend_guest !== null && !data.rsvp.attend_guest}
@@ -290,7 +290,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                         value=''
                                     />
                                     <label
-                                        className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                        className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                         htmlFor='extra-2'
                                     >
                                         {'No'}
@@ -300,7 +300,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                             {data.rsvp.attend_guest &&
                                 <div className='my-10'>
                                     <input
-                                        className='w-full my-2 underline text-2xl font-bold rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring focus:ring-tt-green focus:ring-opacity-50'
+                                        className='my-2 w-full rounded-md border-gray-300 text-2xl font-bold underline shadow-sm focus:border-tt-green focus:ring-tt-green focus:ring focus:ring-opacity-50'
                                         onChange={(event): void => {
                                             setData({
                                                 ...data,
@@ -323,7 +323,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                             </div>
                                             <div className='flex flex-row justify-center gap-5 text-center'>
                                                 <div
-                                                    className='flex w-36 h-10 leading-10 border rounded-md border-gray-300 shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                                    className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                                 >
                                                     <input
                                                         /* @ts-ignore */ /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
@@ -344,14 +344,14 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                         value=''
                                                     />
                                                     <label
-                                                        className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                        className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                                         htmlFor='extrarehersal-1'
                                                     >
                                                         {'Accept'}
                                                     </label>
                                                 </div>
                                                 <div
-                                                    className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                                    className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                                 >
                                                     <input
                                                         /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
@@ -372,7 +372,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                         value=''
                                                     />
                                                     <label
-                                                        className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                        className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                                         htmlFor='extrarehersal-2'
                                                     >
                                                         {'Decline'}
@@ -387,7 +387,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                     </div>
                                     <div className='flex flex-row justify-center gap-5 text-center'>
                                         <div
-                                            className='flex w-36 h-10 leading-10 border rounded-md border-gray-300 shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                            className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                         >
                                             <input
                                                 /* @ts-ignore */ /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
@@ -408,14 +408,14 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                 value=''
                                             />
                                             <label
-                                                className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                                 htmlFor='extrawedding-1'
                                             >
                                                 {'Accept'}
                                             </label>
                                         </div>
                                         <div
-                                            className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                            className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                         >
                                             <input
                                                 checked={data.rsvp.extra_wedding !== null && !data.rsvp.extra_wedding}
@@ -435,7 +435,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                 value=''
                                             />
                                             <label
-                                                className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                                 htmlFor='extrawedding-2'
                                             >
                                                 {'Decline'}
@@ -451,7 +451,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                             </div>
                                             <div className='flex flex-row justify-center gap-5 text-center'>
                                                 <div
-                                                    className='flex w-36 h-10 leading-10 border rounded-md border-gray-300 shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                                    className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                                 >
                                                     <input
                                                         /* @ts-ignore */ /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
@@ -472,14 +472,14 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                         value=''
                                                     />
                                                     <label
-                                                        className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                        className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                                         htmlFor='extrabrunch-1'
                                                     >
                                                         {'Accept'}
                                                     </label>
                                                 </div>
                                                 <div
-                                                    className='flex w-36 h-10 leading-10 border border-gray-300 rounded-md shadow-sm hover:border-tt-green hover:ring hover:ring-tt-green hover:ring-opacity-50'
+                                                    className='flex h-10 w-36 rounded-md border border-gray-300 leading-10 shadow-sm hover:border-tt-green hover:ring-tt-green hover:ring hover:ring-opacity-50'
                                                 >
                                                     <input
                                                         /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
@@ -500,7 +500,7 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                         value=''
                                                     />
                                                     <label
-                                                        className='w-full h-full cursor-pointer rounded-md peer-checked:bg-tt-green'
+                                                        className='h-full w-full cursor-pointer rounded-md peer-checked:bg-tt-green'
                                                         htmlFor='extrabrunch-2'
                                                     >
                                                         {'Decline'}
@@ -508,9 +508,9 @@ export const RsvpForm = ({data, setData}: RsvpFormProps): React.ReactElement => 
                                                 </div>
                                             </div>
                                         </>}
-                                    <p className='mt-5 font-bold text-left'>{'Dietary Restrictions:'}</p>
+                                    <p className='mt-5 text-left font-bold'>{'Dietary Restrictions:'}</p>
                                     <textarea
-                                        className='w-full rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring focus:ring-tt-green focus:ring-opacity-50'
+                                        className='w-full rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring-tt-green focus:ring focus:ring-opacity-50'
                                         onChange={(event): void => {
                                             setData({
                                                 ...data,

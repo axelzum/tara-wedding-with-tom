@@ -65,7 +65,7 @@ const Faq = (): React.ReactElement => {
             <div className='flex h-full flex-col items-center pb-6'>
                 <h1 className='my-6 text-center text-4xl font-bold font-fino md:text-5xl lg:my-10 xl:text-6xl'>{'RSVP'}</h1>
 
-                <div className='flex flex-col justify-center items-center w-5/6 text-center font-quiche'>
+                <div className='flex w-5/6 flex-col items-center justify-center text-center font-quiche'>
                     <p>{'Please enter your full first and last name.'}</p>
                     <p>{'This RSVP will include your entire family or invited party.'}</p>
                     <p>{'If you have any issues or questions contact the bride or groom.'}</p>
@@ -91,7 +91,7 @@ const Faq = (): React.ReactElement => {
                             }
                         }}
                     >
-                        <input className='w-full my-2 rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring focus:ring-tt-green focus:ring-opacity-50' name='name' type='text'/>
+                        <input className='my-2 w-full rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring-tt-green focus:ring focus:ring-opacity-50' name='name' type='text'/>
                         <button
                             className={`rounded-full ${rsvpLoading ? 'w-2/5' : 'w-1/3'} px-1 py-2 text-sm text-white shadow shadow-tt-green bg-tt-green hover:bg-tt-gold`}
                             type='submit'
@@ -121,7 +121,7 @@ const Faq = (): React.ReactElement => {
                 {rsvpData && <RsvpForm data={rsvpData} setData={setRsvpData}/>}
 
                 {(rsvpData && !rsvpData.error) &&
-                    <div className='flex items-center w-[20rem] pb-6'>
+                    <div className='flex items-center pb-6 w-[20rem]'>
                         <button
                             className={`rounded-full ${rsvpLoading ? 'w-2/5' : 'w-1/3'} m-auto px-1 py-2 text-white font-quiche shadow shadow-tt-green bg-tt-green hover:bg-tt-gold disabled:opacity-60 disabled:hover:bg-tt-green`}
                             disabled={isSubmitButtonDisabled(rsvpData)}
@@ -162,12 +162,12 @@ const Faq = (): React.ReactElement => {
                         </button>
                     </div>}
                 {submitSuccess !== undefined && !submitSuccess &&
-                    <div className='font-quiche w-5/6 flex flex-col items-center mt-20 text-center'>
+                    <div className='mt-20 flex w-5/6 flex-col items-center text-center font-quiche'>
                         <p className='font-bold'>{'Something went wrong with your request.'}</p>
                         <p>{'Please contact the bride or groom to submit your RSVP.'}</p>
                     </div>}
                 {submitSuccess !== undefined && submitSuccess &&
-                    <div className='font-quiche w-5/6 flex flex-col items-center mt-20 text-center'>
+                    <div className='mt-20 flex w-5/6 flex-col items-center text-center font-quiche'>
                         <p className='font-bold'>{'Thank you for your response!'}</p>
                         <p>{'We cannot wait to celebrate with you.'}</p>
                         <p>{'You can come back any time to view your selections or make an update.'}</p>
