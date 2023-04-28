@@ -3,8 +3,17 @@ import Head from 'next/head';
 import {PartyMember} from '../components/wedding-party/party-member';
 
 import axel1 from '../public/images/wedding-party/Axel1.jpeg';
+import axel2 from '../public/images/wedding-party/Axel2.jpg';
 import eve1 from '../public/images/wedding-party/Eve1.jpeg';
+import eve2 from '../public/images/wedding-party/Eve2.jpg';
+import harper1 from '../public/images/wedding-party/Harper1.jpeg';
+import harper2 from '../public/images/wedding-party/Harper2.jpg';
+import breiana1 from '../public/images/wedding-party/Breiana1.jpg';
+import breiana2 from '../public/images/wedding-party/Breiana2.jpg';
+import katlyn1 from '../public/images/wedding-party/Katlyn1.jpg';
 import katlyn2 from '../public/images/wedding-party/Katlyn2.jpg';
+import taylor1 from '../public/images/wedding-party/Taylor1.jpg';
+import taylor2 from '../public/images/wedding-party/Taylor2.jpg';
 import monica1 from '../public/images/wedding-party/Monica1.jpeg';
 import monica2 from '../public/images/wedding-party/Monica2.jpg';
 
@@ -39,13 +48,13 @@ const Faq = (): React.ReactElement => (
             <div className='flex w-5/6 flex-col items-center gap-28 pb-6 lg:flex-row lg:justify-evenly'>
                 <div className='flex flex-col text-center'>
                     <h2 className='text-3xl underline font-fino md:text-4xl'>{'Bridesmaids'}</h2>
-                    <PartyMember name='Axel Zumwalt' photo1={axel1}/>
+                    <PartyMember name='Axel Zumwalt' photo1={axel1} photo2={axel2}/>
                     <p className='m-0 text-lg italic font-quiche'>{'Man of Honor'}</p>
-                    <PartyMember name='Eve Zumwalt' photo1={eve1}/>
-                    <PartyMember name='Harper Bean' photo1={placeholder}/>
-                    <PartyMember name='Breiana Brown' photo1={placeholder}/>
-                    <PartyMember name='Katlyn Hardecopf' photo1={placeholder} photo2={katlyn2}/>
-                    <PartyMember name='Taylor Millis' photo1={placeholder}/>
+                    <PartyMember name='Eve Zumwalt' photo1={eve1} photo2={eve2}/>
+                    <PartyMember name='Harper Bean' photo1={harper1} photo2={harper2}/>
+                    <PartyMember name='Breiana Brown' photo1={breiana1} photo2={breiana2}/>
+                    <PartyMember name='Katlyn Hardecopf' photo1={katlyn1} photo2={katlyn2}/>
+                    <PartyMember name='Taylor Millis' photo1={taylor1} photo2={taylor2}/>
                     <PartyMember name='Monica Munier' photo1={monica1} photo2={monica2}/>
                 </div>
                 <div className='flex flex-col text-center'>
