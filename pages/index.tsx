@@ -49,7 +49,7 @@ const Home = (): React.ReactElement => (
                 >
                     {'Map'}
                 </a>
-                <p className='text-center text-sm italic font-quiche md:text-md xl:text-lg'>{'Late Afternoon – Schedule Pending'}</p>
+                <p className='text-center text-sm italic font-quiche md:text-md xl:text-lg'>{'4:30 pm'}</p>
             </div>
         </div>
     </>
