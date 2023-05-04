@@ -25,7 +25,7 @@ const Faq = (): React.ReactElement => (
                     question='What are transportation and parking options at the venue?'
                 />
                 <QuestionAnswer
-                    answer='We care more about you being there than what you are wearing. We’re going to dress up and we’re asking our wedding guests to do the same. Think semi-formal: cocktail dresses and jumpsuits, suits, sports coats, and ties.'
+                    answer='We care more about you being there than what you are wearing. We’re going to dress up and we’re asking our wedding guests to do the same. Think semi-formal: cocktail dresses and jumpsuits, suits, sport coats, and ties.'
                     question='What should I wear to the wedding?'
                 />
                 <QuestionAnswer
