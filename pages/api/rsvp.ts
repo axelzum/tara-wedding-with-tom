@@ -14,8 +14,16 @@ import moment from 'moment';
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
     if (req.method === 'POST') {
         const rsvp = req.body.rsvp;
+
         rsvp.completed = true;
         rsvp.last_updated = moment().toISOString();
+        if (rsvp.attend_guest === false) {
+            rsvp.extra_name = null;
+            rsvp.extra_dietary = null;
+            rsvp.extra_brunch = null;
+            rsvp.extra_wedding = null;
+            rsvp.extra_rehersal = null;
+        }
         try {
             console.log(`Updating RSVPID=${rsvp.id} with`, rsvp);
             const updateRsvpResult = await prisma.rSVP.update({
