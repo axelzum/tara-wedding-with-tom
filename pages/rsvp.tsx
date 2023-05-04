@@ -50,7 +50,7 @@ const postRSVP = async (rsvpData: RsvpDataType): Promise<Response> => {
     return response;
 };
 
-const Faq = (): React.ReactElement => {
+const FaqBroken = (): React.ReactElement => {
     const [rsvpLoading, setRsvpLoading] = useState<boolean>(false);
     const [rsvpData, setRsvpData] = useState<RsvpDataType>();
     const [submitSuccess, setSubmitSuccess] = useState<boolean|undefined>();
@@ -176,5 +176,23 @@ const Faq = (): React.ReactElement => {
         </>
     );
 };
+
+const Faq = (): React.ReactElement => (
+    <>
+        <Head>
+            <title>{'RSVP'}</title>
+            <meta content='RSVP to The Wedding' name='description'/>
+        </Head>
+
+        <div className='flex h-full flex-col items-center pb-6'>
+            <h1 className='my-6 text-center text-4xl font-bold font-fino md:text-5xl lg:my-10 xl:text-6xl'>{'RSVP'}</h1>
+
+            <div className='flex w-5/6 flex-col items-center justify-center text-center font-quiche'>
+                <p>{'We are experiencing technical difficulties with the RSVP service.'}</p>
+                <p>{'We are terribly sorry for the inconvenience. Please check back in a day or two.'}</p>
+            </div>
+        </div>
+    </>
+);
 
 export default Faq;
