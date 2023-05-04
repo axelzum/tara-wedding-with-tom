@@ -36,11 +36,12 @@ const Home = (): React.ReactElement => (
 
             <hr className='w-11/12'/>
 
-            <div className='my-5 flex w-1/2 flex-col items-center pb-6'>
-                <p className='text-center text-3xl font-fino xl:text-4xl'>{'Ceremony & Reception'}</p>
-                <p className='text-center text-sm font-bold font-quiche md:text-md xl:text-lg'>{'HarMac Event Center'}</p>
-                <p className='text-center text-sm font-quiche md:text-md xl:text-lg'>{'411 6th Ave SE'}</p>
-                <p className='text-center text-sm font-quiche md:text-md xl:text-lg'>{'Cedar Rapids, Iowa'}</p>
+            <div className='my-5 flex w-1/2 flex-col items-center pb-12 text-center'>
+                <p className='text-3xl font-fino xl:text-4xl'>{'Ceremony & Reception'}</p>
+                <p className='text-sm font-bold font-quiche md:text-md xl:text-lg'>{'HarMac Event Center'}</p>
+                <p className='text-sm font-quiche md:text-md xl:text-lg'>{'411 6th Ave SE'}</p>
+                <p className='text-sm font-quiche md:text-md xl:text-lg'>{'Cedar Rapids, Iowa'}</p>
+                <p className='text-sm italic font-quiche md:text-md xl:text-lg'>{'4:30pm'}</p>
                 <a
                     className='font-bold font-quiche text-tt-green hover:text-tt-gold'
                     href='https://goo.gl/maps/59jygXq7WC8bMQ1f9'
@@ -49,7 +50,7 @@ const Home = (): React.ReactElement => (
                 >
                     {'Map'}
                 </a>
-                <p className='text-center text-sm italic font-quiche md:text-md xl:text-lg'>{'4:30 pm'}</p>
+                <p className='pt-6 text-sm font-bold font-quiche md:text-md xl:text-lg'>{'RSVP by May 24th'}</p>
             </div>
         </div>
     </>

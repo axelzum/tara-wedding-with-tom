@@ -41,16 +41,14 @@ const fetchRSVP = async (event: React.FormEvent<HTMLFormElement>): Promise<Respo
         headers: {'Content-Type': 'application/json'}
     });
 
-const postRSVP = async (rsvpData: RsvpDataType): Promise<Response> => {
-    const response = await fetch('/api/rsvp', {
+const postRSVP = async (rsvpData: RsvpDataType): Promise<Response> =>
+    await fetch('/api/rsvp', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(rsvpData)
     });
-    return response;
-};
 
-const FaqBroken = (): React.ReactElement => {
+const Rsvp = (): React.ReactElement => {
     const [rsvpLoading, setRsvpLoading] = useState<boolean>(false);
     const [rsvpData, setRsvpData] = useState<RsvpDataType>();
     const [submitSuccess, setSubmitSuccess] = useState<boolean|undefined>();
@@ -69,6 +67,7 @@ const FaqBroken = (): React.ReactElement => {
                     <p>{'Please enter your full first and last name.'}</p>
                     <p>{'This RSVP will include your entire family or invited party.'}</p>
                     <p>{'If you have any issues or questions contact the bride or groom.'}</p>
+                    <p className='font-bold'>{'Kindly respond by May 24th.'}</p>
                     <form
                         className='w-[20rem] font-quiche'
                         /* eslint-disable-next-line @typescript-eslint/no-misused-promises */
@@ -91,7 +90,12 @@ const FaqBroken = (): React.ReactElement => {
                             }
                         }}
                     >
-                        <input className='my-2 w-full rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring-tt-green focus:ring focus:ring-opacity-50' name='name' type='text'/>
+                        <input
+                            className='my-2 w-full rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring-tt-green focus:ring focus:ring-opacity-50'
+                            name='name'
+                            placeholder='Enter Full Name'
+                            type='text'
+                        />
                         <button
                             className={`rounded-full ${rsvpLoading ? 'w-2/5' : 'w-1/3'} px-1 py-2 text-sm text-white shadow shadow-tt-green bg-tt-green hover:bg-tt-gold`}
                             type='submit'
@@ -177,22 +181,4 @@ const FaqBroken = (): React.ReactElement => {
     );
 };
 
-const Faq = (): React.ReactElement => (
-    <>
-        <Head>
-            <title>{'RSVP'}</title>
-            <meta content='RSVP to The Wedding' name='description'/>
-        </Head>
-
-        <div className='flex h-full flex-col items-center pb-6'>
-            <h1 className='my-6 text-center text-4xl font-bold font-fino md:text-5xl lg:my-10 xl:text-6xl'>{'RSVP'}</h1>
-
-            <div className='flex w-5/6 flex-col items-center justify-center text-center font-quiche'>
-                <p>{'We are experiencing technical difficulties with the RSVP service.'}</p>
-                <p>{'We are terribly sorry for the inconvenience. Please check back in a day or two.'}</p>
-            </div>
-        </div>
-    </>
-);
-
-export default Faq;
+export default Rsvp;

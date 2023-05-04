@@ -7,32 +7,47 @@ import {
     RESPONSE_OK
 } from '../../constants/status-codes';
 import prisma from '../../lib/prisma';
+import moment from 'moment';
 
 /* eslint-disable @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
 
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
     if (req.method === 'POST') {
         const rsvp = req.body.rsvp;
+
         rsvp.completed = true;
+        rsvp.last_updated = moment().toISOString();
+        if (rsvp.attend_guest === false) {
+            rsvp.extra_name = null;
+            rsvp.extra_dietary = null;
+            rsvp.extra_brunch = null;
+            rsvp.extra_wedding = null;
+            rsvp.extra_rehersal = null;
+        }
         try {
-            const updateRsvp = await prisma.rSVP.update({
+            console.log(`Updating rsvpId=${rsvp.id} with`, rsvp);
+            const updateRsvpResult = await prisma.rSVP.update({
                 where: {
                     id: rsvp.id
                 },
                 data: rsvp
             });
+            console.log('RSVP result:', updateRsvpResult);
             const guests = req.body.guests;
             // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-            guests.map(async (guest: {id: any}) => {
-                await prisma.guest.update({
+            await Promise.all(guests.map(async (guest: any) => {
+                console.log(`Updating guestId=${guest.id} with`, guest);
+                const guestResponse = await prisma.guest.update({
                     where: {
                         id: guest.id
                     },
                     data: guest
                 });
-            });
+                console.log('Guest result:', guestResponse);
+            }));
             res.status(RESPONSE_OK).json('Success');
         } catch (e) {
+            console.log(e);
             res.status(RESPONSE_INTERNAL_SERVER_ERROR).json({error: e});
         }
     } else if (req.method === 'GET') {
@@ -76,6 +91,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
             guests.sort((a, b) => a.id - b.id);
             res.status(RESPONSE_OK).json({rsvp, guests});
         } catch (e) {
+            console.log(e);
             res.status(RESPONSE_INTERNAL_SERVER_ERROR).json({error: e});
         }
     } else {

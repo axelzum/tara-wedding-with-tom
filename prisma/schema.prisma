@@ -19,8 +19,8 @@ model Guest {
 }
 
 model RSVP {
-  id                  Int      @id @default(autoincrement())
-  completed           Boolean  @default(false)
+  id                  Int       @id @default(autoincrement())
+  completed           Boolean   @default(false)
   guests              Guest[]
   is_rehersal_invited Boolean
   is_brunch_invited   Boolean
@@ -31,4 +31,5 @@ model RSVP {
   extra_brunch        Boolean?
   extra_rehersal      Boolean?
   extra_dietary       String?
+  last_updated        DateTime?
 }
