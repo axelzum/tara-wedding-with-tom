@@ -25,7 +25,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
             rsvp.extra_rehersal = null;
         }
         try {
-            console.log(`Updating RSVPID=${rsvp.id} with`, rsvp);
+            console.log(`Updating rsvpId=${rsvp.id} with`, rsvp);
             const updateRsvpResult = await prisma.rSVP.update({
                 where: {
                     id: rsvp.id
@@ -44,7 +44,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
                     data: guest
                 });
                 console.log('Guest result:', guestResponse);
-                // return guestResponse
             }));
             res.status(RESPONSE_OK).json('Success');
         } catch (e) {

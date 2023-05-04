@@ -41,14 +41,12 @@ const fetchRSVP = async (event: React.FormEvent<HTMLFormElement>): Promise<Respo
         headers: {'Content-Type': 'application/json'}
     });
 
-const postRSVP = async (rsvpData: RsvpDataType): Promise<Response> => {
-    const response = await fetch('/api/rsvp', {
+const postRSVP = async (rsvpData: RsvpDataType): Promise<Response> =>
+    await fetch('/api/rsvp', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(rsvpData)
     });
-    return response;
-};
 
 const Rsvp = (): React.ReactElement => {
     const [rsvpLoading, setRsvpLoading] = useState<boolean>(false);
