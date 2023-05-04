@@ -15,21 +15,25 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
         const rsvp = req.body.rsvp;
         rsvp.completed = true;
         try {
-            const updateRsvp = await prisma.rSVP.update({
+            console.log(`Updating RSVPID=${rsvp.id} with`, rsvp);
+            const updateRsvpResult = await prisma.rSVP.update({
                 where: {
                     id: rsvp.id
                 },
                 data: rsvp
             });
+            console.log('RSVP result:', updateRsvpResult);
             const guests = req.body.guests;
             // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-            guests.map(async (guest: {id: any}) => {
-                await prisma.guest.update({
+            guests.map(async (guest: any) => {
+                console.log(`Updating guestId=${guest.id} with`, rsvp);
+                const guestResponse = await prisma.guest.update({
                     where: {
                         id: guest.id
                     },
                     data: guest
                 });
+                console.log('Guest result:', guestResponse);
             });
             res.status(RESPONSE_OK).json('Success');
         } catch (e) {
@@ -76,6 +80,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
             guests.sort((a, b) => a.id - b.id);
             res.status(RESPONSE_OK).json({rsvp, guests});
         } catch (e) {
+            console.log(e);
             res.status(RESPONSE_INTERNAL_SERVER_ERROR).json({error: e});
         }
     } else {
