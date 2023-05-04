@@ -25,8 +25,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
             console.log('RSVP result:', updateRsvpResult);
             const guests = req.body.guests;
             // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-            guests.map(async (guest: any) => {
-                console.log(`Updating guestId=${guest.id} with`, rsvp);
+            await Promise.all(guests.map(async (guest: any) => {
+                console.log(`Updating guestId=${guest.id} with`, guest);
                 const guestResponse = await prisma.guest.update({
                     where: {
                         id: guest.id
@@ -34,7 +34,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
                     data: guest
                 });
                 console.log('Guest result:', guestResponse);
-            });
+                // return guestResponse
+            }));
             res.status(RESPONSE_OK).json('Success');
         } catch (e) {
             res.status(RESPONSE_INTERNAL_SERVER_ERROR).json({error: e});
