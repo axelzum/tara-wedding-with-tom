@@ -7,6 +7,7 @@ import {
     RESPONSE_OK
 } from '../../constants/status-codes';
 import prisma from '../../lib/prisma';
+import moment from 'moment-timezone';
 
 /* eslint-disable @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
 
@@ -14,6 +15,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
     if (req.method === 'POST') {
         const rsvp = req.body.rsvp;
         rsvp.completed = true;
+        rsvp.last_updated = moment().tz('America/Chicago');
         try {
             console.log(`Updating RSVPID=${rsvp.id} with`, rsvp);
             const updateRsvpResult = await prisma.rSVP.update({
