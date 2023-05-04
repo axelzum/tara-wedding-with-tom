@@ -69,6 +69,7 @@ const Rsvp = (): React.ReactElement => {
                     <p>{'Please enter your full first and last name.'}</p>
                     <p>{'This RSVP will include your entire family or invited party.'}</p>
                     <p>{'If you have any issues or questions contact the bride or groom.'}</p>
+                    <p className='font-bold'>{'Kindly respond by May 24th.'}</p>
                     <form
                         className='w-[20rem] font-quiche'
                         /* eslint-disable-next-line @typescript-eslint/no-misused-promises */
@@ -91,7 +92,12 @@ const Rsvp = (): React.ReactElement => {
                             }
                         }}
                     >
-                        <input className='my-2 w-full rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring-tt-green focus:ring focus:ring-opacity-50' name='name' type='text'/>
+                        <input
+                            className='my-2 w-full rounded-md border-gray-300 shadow-sm focus:border-tt-green focus:ring-tt-green focus:ring focus:ring-opacity-50'
+                            name='name'
+                            placeholder='Enter Full Name'
+                            type='text'
+                        />
                         <button
                             className={`rounded-full ${rsvpLoading ? 'w-2/5' : 'w-1/3'} px-1 py-2 text-sm text-white shadow shadow-tt-green bg-tt-green hover:bg-tt-gold`}
                             type='submit'
