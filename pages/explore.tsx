@@ -31,6 +31,12 @@ const Explore = (): React.ReactElement => (
             <p className='mt-6 text-center text-3xl font-fino xl:text-4xl'>{'Things To Do'}</p>
             <div className='w-5/6 font-quiche'>
                 <ExploreItem
+                    description='This long running Cedar Rapids tradition is a festival in celebration of Independence Day. Notable events this weekend include a Downtown Jazz Night on Friday and a parade Saturday morning.'
+                    link='https://www.freedomfestival.com/events/#'
+                    linkTitle='Calendar of Events'
+                    title='Cedar Rapids Freedom Festival'
+                />
+                <ExploreItem
                     description='This museum houses more than 7,200 works of art spanning many eras-from Roman antiquity to the present. It features a large collection of art by Grant Wood and Marvin Cone'
                     link='https://www.crma.org/'
                     linkTitle='Museum Website'
@@ -80,7 +86,7 @@ const Explore = (): React.ReactElement => (
                     description='Take in some minor league baseball before or after our wedding. Friday at 6:35 pm or Sunday at 1:05 pm.'
                     link='https://www.milb.com/cedar-rapids/'
                     linkTitle='Schedule'
-                    title='Cedar Rapids Kernals'
+                    title='Cedar Rapids Kernels'
                 />
                 <ExploreItem
                     description='Cedar Rapids has a few great bike trails and bike lanes that go throughout the downtown area. Bring your bike for the weekend and pick a hotel near the trail!'
